@@ -85,7 +85,8 @@
 
 ## 📊 GitHub 数据
 
-<img src="https://streak-stats.demolab.com?user=wanghaoyi216&theme=github-dark&hide_border=true&date_format=YYYY-MM-DD" alt="Contribution streak" />
+<!-- 不要加 date_format 参数：它会让卡片变宽，窄页面下文字会挤成一团 -->
+<img src="https://streak-stats.demolab.com?user=wanghaoyi216&theme=github-dark&hide_border=true" alt="Contribution streak" />
 
 ---
 
