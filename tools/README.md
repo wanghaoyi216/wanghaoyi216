@@ -75,6 +75,29 @@ GitHub README 可以切浅色模式。深色 hero 是图片所以无所谓，
 camo 永远给旧图。所以 `_ver()` 从 README 里读当前版本再复用。
 校验方法：扫一遍 README，同一资产出现的 `?v=` 必须只有一个值。
 
+---
+
+## streak 卡片也归主题管
+
+`streak-stats.demolab.com` 是全站唯一一个第三方图，也是唯一不受主题控制的元素——
+默认 `theme=github-dark` 的亮绿色在整页暖色里格外扎眼。
+
+**不要换掉它**（那会丢掉实时贡献数据），而是利用它支持的八个自定义色参数把它染成主题色：
+
+```
+background / border / stroke / ring / fire / sideNums / sideLabels / title
+```
+
+`set_theme.py` 每次切主题重写这个 URL，并且**找不到正好 1 个就抛错**，
+防止它哪天悄悄退回默认绿。映射关系见 `streak_url()`。
+
+**验证方法**：别只看卡片"渲染出来了"，要直接查返回的 SVG 里还有没有 GitHub 绿
+（`#28a745` / `#216e39` / `#0e4429`），命中数必须是 0。
+另外它的 `date_format` 用的是 **JS/moment 风格不是 strftime**
+（`Y` 会变成 `2025`，但 `%b`、`%d` 原样透传），不传就是可读的
+`Jul 20, 2025 - Present`，别乱加。
+
+
 
 ---
 
