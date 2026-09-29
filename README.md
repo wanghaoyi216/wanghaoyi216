@@ -6,9 +6,9 @@
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=Noto+Sans+SC&weight=600&size=23&pause=3000&color=58A6FF&center=true&vCenter=true&width=680&height=70&lines=%E7%94%A8+AI+%E8%A7%A3%E5%86%B3%E7%A7%91%E7%A0%94%E5%92%8C%E6%95%99%E5%AD%A6%E9%87%8C%E7%9A%84%E9%BA%BB%E7%83%A6%E4%BA%8B;Python+%2F+Java+%2F+Vue+%E5%85%A8%E6%A0%88%E5%BC%80%E5%8F%91;Building+tools+that+actually+run">
-    <source media="(prefers-color-scheme: light)" srcset="https://readme-typing-svg.demolab.com?font=Noto+Sans+SC&weight=600&size=23&pause=3000&color=0969DA&center=true&vCenter=true&width=680&height=70&lines=%E7%94%A8+AI+%E8%A7%A3%E5%86%B3%E7%A7%91%E7%A0%94%E5%92%8C%E6%95%99%E5%AD%A6%E9%87%8C%E7%9A%84%E9%BA%BB%E7%83%A6%E4%BA%8B;Python+%2F+Java+%2F+Vue+%E5%85%A8%E6%A0%88%E5%BC%80%E5%8F%91;Building+tools+that+actually+run">
-    <img alt="typing" src="https://readme-typing-svg.demolab.com?font=Noto+Sans+SC&weight=600&size=23&pause=3000&color=58A6FF&center=true&vCenter=true&width=680&height=70&lines=%E7%94%A8+AI+%E8%A7%A3%E5%86%B3%E7%A7%91%E7%A0%94%E5%92%8C%E6%95%99%E5%AD%A6%E9%87%8C%E7%9A%84%E9%BA%BB%E7%83%A6%E4%BA%8B;Python+%2F+Java+%2F+Vue+%E5%85%A8%E6%A0%88%E5%BC%80%E5%8F%91;Building+tools+that+actually+run">
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/typing-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/typing-light.svg">
+    <img alt="typing" src="./assets/typing-dark.svg" width="100%">
   </picture>
 </p>
 
