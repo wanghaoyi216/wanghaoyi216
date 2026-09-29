@@ -171,6 +171,26 @@ Chrome 把 SVG 当 `<img>` 渲染时不跑 SMIL。实测三种方案（`<textPat
 
 ---
 
+## 提交前跑一遍校验
+
+```powershell
+D:\Anaconda3\python.exe tools\check_assets.py     # 本地图在不在 git 里 / ?v= 有没有分裂
+D:\Anaconda3\python.exe tools\check_external.py   # 外部图 URL 是否还活着
+```
+
+`check_assets.py` 比"文件在不在磁盘上"严格一档：它拿 `git ls-files` 对，
+也就是**真正提交上去的清单**。曾因为一条陈旧的 `.gitignore` 规则，
+文件在本地好好躺着却一直没被提交，线上 404 才发现。
+
+`check_external.py` 除了状态码还看**体积**：shields.io / skillicons 对无效参数
+会返回 200 加一张空图，光看状态码会误判成"正常"。
+
+（这个脚本用 `urllib` 而不是 `subprocess curl`：badge URL 里全是 `&`，
+在 PowerShell 里传给 `curl.exe` 会被拆成多个参数，表现成"只回了 100 来字节"，
+排查时极易误判成服务端故障。）
+
+---
+
 ## 本地校验页（已 gitignore）
 
 - `preview/theme-sheet.png` —— 六套主题对比
