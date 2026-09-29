@@ -82,21 +82,16 @@
 
 ## 🛠️ 技术栈
 
-<p align="center">
-
-**主力语言**
-
-<img src="./assets/tech-languages.svg?v=3" alt="Languages" />
-
-**框架与工具**
-
-<img src="./assets/tech-frameworks.svg?v=3" alt="Frameworks" />
-
-**数据与基础设施**
-
-<img src="./assets/tech-data.svg?v=3" alt="Data & Infrastructure" />
-
-</p>
+<div align="center">
+  <p><b>主力语言</b></p>
+  <img src="./assets/tech-languages.svg?v=4" alt="Languages" width="380" />
+  <br />
+  <p><b>框架与工具</b></p>
+  <img src="./assets/tech-frameworks.svg?v=4" alt="Frameworks" width="380" />
+  <br />
+  <p><b>数据与基础设施</b></p>
+  <img src="./assets/tech-data.svg?v=4" alt="Data &amp; Infrastructure" width="470" />
+</div>
 
 ---
 
