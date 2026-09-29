@@ -1,53 +1,59 @@
 <!-- ══════════════════════════════════════════════════════════════
   个人主页 README
-  视觉系统：深紫红暖底 + 桃红→橙金渐变（全站同源）
-  所有图片都是自建的（assets/ 由 tools/ 脚本生成），不依赖第三方图片服务。
+
+  视觉基调：白为主、粉做点缀（约 75% 白 / 25% 粉），深色只出现在文字里。
+  全站配色唯一来源是 tools/theme.py；所有图片由 tools/ 下的脚本生成，
+  不依赖任何第三方图片服务（唯一例外是 streak 贡献卡，它保留实时数据）。
+
   改任何一张图后，记得把下面 URL 的 ?v=N 加一 —— GitHub 的 camo 按 URL 缓存。
   ══════════════════════════════════════════════════════════════ -->
 
-<img alt="Haoyi Wang — Geospatial x AI" src="./assets/banner-dark.gif?v=18" width="100%">
+<img alt="Haoyi Wang — Geospatial x AI" src="./assets/banner.svg?v=4" width="100%">
 
 <p align="center">
-  <img alt="typing" src="./assets/typing-dark.gif?v=16" width="100%">
+  <img alt="typing" src="./assets/typing.gif?v=4" width="100%">
 </p>
 
-<div align="center"><img src="./assets/divider.svg?v=8" width="520" alt=""></div>
-
-<img alt="现在" src="./assets/header-status.webp?v=6" width="100%">
+## 🔭 现在
 
 <table>
 <tr>
-<td width="33%" valign="top"><b>🔭 正在做</b><br><sub>科研汇报自动成稿<br>+ 四道排版质量闸门</sub></td>
+<td width="33%" valign="top"><b>🔭 正在做</b><br><sub>科研汇报自动成稿<br>+ 四道可执行质量闸门</sub></td>
 <td valign="top"><b>🌱 正在学</b><br><sub>TypeScript 工程化<br>GIS × 大模型工具链</sub></td>
 <td valign="top"><b>🧩 找合作</b><br><sub>遥感 / 地理信息<br>教育信息化方向</sub></td>
 </tr>
 </table>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Geospatial_AI-A8485C?style=for-the-badge&logo=googleearth&logoColor=white" alt="Geospatial AI" />
-  <img src="https://img.shields.io/badge/Python-A8485C?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
-  <img src="https://img.shields.io/badge/Java-A8485C?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java" />
-  <img src="https://img.shields.io/badge/Vue-A8485C?style=for-the-badge&logo=vuedotjs&logoColor=white" alt="Vue" />
-  <img src="https://img.shields.io/badge/TypeScript-A8485C?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
-  <img src="https://img.shields.io/badge/Spring_Cloud-A8485C?style=for-the-badge&logo=spring&logoColor=white" alt="Spring Cloud" />
-  <img src="https://img.shields.io/badge/Docker-A8485C?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" />
+  <img src="https://img.shields.io/badge/Geospatial_AI-F8D7E1?style=for-the-badge&logo=googleearth" alt="Geospatial AI" />
+  <img src="https://img.shields.io/badge/Python-F8D7E1?style=for-the-badge&logo=python" alt="Python" />
+  <img src="https://img.shields.io/badge/Java-F8D7E1?style=for-the-badge&logo=openjdk" alt="Java" />
+  <img src="https://img.shields.io/badge/Vue-F8D7E1?style=for-the-badge&logo=vuedotjs" alt="Vue" />
+  <img src="https://img.shields.io/badge/TypeScript-F8D7E1?style=for-the-badge&logo=typescript" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Spring_Cloud-F8D7E1?style=for-the-badge&logo=spring" alt="Spring Cloud" />
+  <img src="https://img.shields.io/badge/Docker-F8D7E1?style=for-the-badge&logo=docker" alt="Docker" />
 </p>
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=wanghaoyi216&color=6B3A3F&label=Profile%20Views&style=for-the-badge" alt="Profile views" />
-  <img src="https://img.shields.io/github/followers/wanghaoyi216?label=Followers&color=6B3A3F&style=for-the-badge" alt="Followers" />
-  <img src="https://img.shields.io/github/stars/wanghaoyi216?label=Stars&color=6B3A3F&style=for-the-badge" alt="Stars" />
-  <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Fusers%2Fwanghaoyi216&query=%24.public_repos&label=Repos&color=6B3A3F&style=for-the-badge" alt="Repos" />
-  <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Fusers%2Fwanghaoyi216&query=%24.following&label=Following&color=6B3A3F&style=for-the-badge" alt="Following" />
+  <img src="https://komarev.com/ghpvc/?username=wanghaoyi216&color=F0C3D1&label=Profile%20Views&style=for-the-badge" alt="Profile views" />
+  <img src="https://img.shields.io/github/followers/wanghaoyi216?label=Followers&color=F0C3D1&style=for-the-badge" alt="Followers" />
+  <img src="https://img.shields.io/github/stars/wanghaoyi216?label=Stars&color=F0C3D1&style=for-the-badge" alt="Stars" />
+  <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Fusers%2Fwanghaoyi216&query=%24.public_repos&label=Repos&color=F0C3D1&style=for-the-badge" alt="Repos" />
+  <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Fusers%2Fwanghaoyi216&query=%24.following&label=Following&color=F0C3D1&style=for-the-badge" alt="Following" />
 </p>
 
-<div align="center"><img src="./assets/divider.svg?v=8" width="520" alt=""></div>
+## 🧭 关于我
 
-<img alt="关于我" src="./assets/header-about.webp?v=6" width="100%">
+中国地质大学（武汉）**地理科学与信息工程**硕士在读。我的主线很具体：**用 AI 和工程能力，去解决那些「没人愿意写、但确实很烦」的重复劳动**。
 
-中国地质大学（武汉）**地理科学与信息工程**硕士在读。事情做得杂，但主线很清楚：**用 AI 和工程能力，去解决具体领域里那些「没人愿意写、但确实很烦」的问题**——导师明天就要的汇报稿、课程平台的重复劳动、读研两年攒下却散落各处的笔记。
+导师明天上午就要的汇报稿、课程平台上重复的排版与整理、读研两年攒下却散落在各个文件夹里的笔记——这些事本身都不难，但特别消耗时间，而且每次都要从头再来一遍。我想让它们变成**跑一次、以后就不用再管**的东西。
 
-我不喜欢只交 demo。所以给自己的项目定了两条规矩：**能跑**、**能验收**。把质量闸门写进代码，而不是靠肉眼检查。
+我不喜欢只交 demo，所以给自己的项目定了两条规矩：
+
+- **能跑** —— 交付的是能直接打开就用的东西，不是截图和演示视频
+- **能验收** —— 质量标准写进代码，做成可执行的检查，而不是靠肉眼过一遍
+
+按这个标准，汇报 PPT 生成器要能自动查出文字溢出、对比度不足、版面空洞和模板仿歪；在线教育平台要能用 Docker Compose 一键起起来、坏节点能自己摘掉。这些对我来说不是加分项，是及格线。
 
 <table>
 <tr>
@@ -64,77 +70,54 @@
 </tr>
 </table>
 
-<div align="center"><img src="./assets/divider.svg?v=8" width="520" alt=""></div>
+## 🚀 精选项目
 
-<img alt="精选项目" src="./assets/header-projects.webp?v=6" width="100%">
-
-| 项目 | 它做了什么 | 技术栈 |
+| 项目 | 它解决了什么 | 技术栈 |
 | :--- | :--- | :--- |
-| 📊 **[research-ppt-builder](https://github.com/wanghaoyi216/PPT-research-ppt-builder)** | 以自己的 `.pptx` 为母版自动出科研汇报稿，自动生成讲稿，并**用四道可执行闸门**自动验收文字溢出、对比度不足、版面空洞与模板仿歪。零上传、零版权素材。 | Python |
-| 🎓 **[NovaMind](https://github.com/wanghaoyi216/NovaMind-)** | Spring Cloud 微服务 + Vue3 的云原生 AI 在线教育平台，RAG 内容生成 + 课程考试管理，Docker Compose 一键编排。 | Java / Vue |
-| 🌌 **[Mnemoscape](https://github.com/wanghaoyi216/Mnemoscape)** | 把记忆编织成梦境的星空式 Web 应用，支持 AI 交互、经历共鸣聊天、记忆路径存储。 | Java |
-| ✍️ **[Mowen-AI-Editor](https://github.com/wanghaoyi216/Mowen-AI-Editor)** | 小说创作与提示词工程结合的 AI 编辑系统。 | Python |
+| 📊 **[PPT-research-ppt-builder](https://github.com/wanghaoyi216/-PPT--research-ppt-builder)** | 以自己的 `.pptx` 为母版自动出科研汇报稿，并自动生成讲稿。四道**可执行闸门**逐项验收文字溢出、对比度不足、版面空洞与模板仿歪——不合格就自己改到合格。零上传、零版权素材，内置 3 套主题与 matplotlib 图表风格预设。 | Python |
+| 🎓 **[NovaMind-](https://github.com/wanghaoyi216/NovaMind-)** | 云原生 AI 在线教育平台。Spring Cloud 微服务 + Vue3，集成 RAG 内容生成、课程与考试管理，Docker Compose 一键编排。 | Java / Vue |
+| 🌌 **[Mnemoscape](https://github.com/wanghaoyi216/Mnemoscape)** | 把记忆编织成梦境的星空式 Web 应用。支持 AI 交互、经历共鸣聊天、记忆路径存储。 | Java |
+| ✍️ **[Mowen-AI-Editor](https://github.com/wanghaoyi216/Mowen-AI-Editor)** | 小说创作与提示词工程结合的 AI 编辑系统，创意写作和工程化流程揉在一起。 | Python |
 
 <p align="center">
   <a href="https://github.com/wanghaoyi216?tab=repositories">
-    <img src="https://img.shields.io/badge/查看全部仓库-C98A3C?style=for-the-badge&logo=github&logoColor=white" alt="all repos" />
+    <img src="https://img.shields.io/badge/查看全部仓库-C9456F?style=for-the-badge&logo=github" alt="all repos" />
   </a>
 </p>
 
-<div align="center"><img src="./assets/divider.svg?v=8" width="520" alt=""></div>
-
-<img alt="技术栈" src="./assets/header-stack.webp?v=6" width="100%">
+## 🛠️ 技术栈
 
 <div align="center">
   <p><b>主力语言</b></p>
-  <img src="./assets/tech-languages.svg?v=9" alt="Languages" width="380" />
+  <img src="./assets/tech-languages.svg?v=1" alt="Languages" width="380" />
   <br />
   <p><b>框架与工具</b></p>
-  <img src="./assets/tech-frameworks.svg?v=9" alt="Frameworks" width="380" />
+  <img src="./assets/tech-frameworks.svg?v=1" alt="Frameworks" width="380" />
   <br />
   <p><b>数据与基础设施</b></p>
-  <img src="./assets/tech-data.svg?v=9" alt="Data &amp; Infrastructure" width="470" />
+  <img src="./assets/tech-data.svg?v=1" alt="Data &amp; Infrastructure" width="470" />
 </div>
 
-<div align="center"><img src="./assets/divider.svg?v=8" width="520" alt=""></div>
-
-<img alt="贡献轨迹" src="./assets/header-streak.webp?v=6" width="100%">
+## 📊 贡献轨迹
 
 <p align="center">
-  <img src="https://streak-stats.demolab.com?user=wanghaoyi216&hide_border=true&background=1A0F21&border=1A0F21&stroke=602C2E&ring=FFCBA4&fire=FFAF70&sideNums=FFE0C8&sideLabels=C98A3C&title=FFE0C8" alt="Contribution streak" />
+  <img src="https://streak-stats.demolab.com?user=wanghaoyi216&hide_border=false&background=FDEBF2&border=E8A8BE&stroke=E8A8BE&ring=E88AA8&fire=8C2F52&sideNums=8C2F52&sideLabels=C9456F&title=8C2F52&currStreakLabel=8C2F52" alt="Contribution streak" />
 </p>
 
-<div align="center"><img src="./assets/divider.svg?v=8" width="520" alt=""></div>
-
-<img alt="找到我" src="./assets/header-contact.webp?v=6" width="100%">
+## 📫 找到我
 
 <p align="center">
   <a href="mailto:haoyiwang156@gmail.com">
-    <img src="https://img.shields.io/badge/Email-A8485C?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+    <img src="https://img.shields.io/badge/Email-F8D7E1?style=for-the-badge&logo=gmail" alt="Email" />
   </a>
   <a href="https://github.com/wanghaoyi216" target="_blank" rel="noopener">
-    <img src="https://img.shields.io/badge/GitHub-A8485C?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+    <img src="https://img.shields.io/badge/GitHub-F8D7E1?style=for-the-badge&logo=github" alt="GitHub" />
   </a>
   <a href="https://github.com/wanghaoyi216?tab=repositories" target="_blank" rel="noopener">
-    <img src="https://img.shields.io/badge/全部仓库-C98A3C?style=for-the-badge&logo=github&logoColor=white" alt="Repos" />
+    <img src="https://img.shields.io/badge/全部仓库-C9456F?style=for-the-badge&logo=github" alt="Repos" />
   </a>
 </p>
 
 <p align="center">
   <sub>如果你也在做「AI + 垂直领域」的东西，欢迎来找我聊聊 —— 一个人的想法，往往需要第二个人的数据才能活下来。</sub>
 </p>
-
-<!--THEMES:BEGIN-->
-<div align="center"><img src="./assets/divider.svg?v=8" width="520" alt=""></div>
-
-<img alt="六套配色 · 随时切换" src="./assets/header-themes.webp?v=3" width="100%">
-
-整套主页的视觉——banner、打字机、分隔线、徽章——共用同一份配色定义，
-换主题是换一个值的事，banner 和徽章不会各说各话。
-
-<table>
-<tr><td width="50%" valign="top"><img src="./assets/themes/warm/poster.webp?v=1" alt="暖阳 warm" width="100%"><br><sub><b>暖阳 warm</b> · 当前 · 桃红 → 橙金</sub></td><td width="50%" valign="top"><img src="./assets/themes/aurora/poster.webp?v=1" alt="极光 aurora" width="100%"><br><sub><b>极光 aurora</b> · 薄荷 → 冰蓝</sub></td></tr>
-<tr><td width="50%" valign="top"><img src="./assets/themes/sakura/poster.webp?v=1" alt="樱粉 sakura" width="100%"><br><sub><b>樱粉 sakura</b> · 樱粉 → 淡紫</sub></td><td width="50%" valign="top"><img src="./assets/themes/nebula/poster.webp?v=1" alt="星海 nebula" width="100%"><br><sub><b>星海 nebula</b> · 靛蓝 → 洋红</sub></td></tr>
-<tr><td width="50%" valign="top"><img src="./assets/themes/mint/poster.webp?v=1" alt="薄荷 mint" width="100%"><br><sub><b>薄荷 mint</b> · 薄荷绿 → 青柠</sub></td><td width="50%" valign="top"><img src="./assets/themes/noir/poster.webp?v=1" alt="墨金 noir" width="100%"><br><sub><b>墨金 noir</b> · 哑光金 · 黑底</sub></td></tr>
-</table>
-<!--THEMES:END-->

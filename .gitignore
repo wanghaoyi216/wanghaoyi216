@@ -33,10 +33,6 @@ build/
 # 本地预览/校验页，不进公开仓库
 preview/
 
-# 已被淘汰的历史资产（只保留当前在用的那一份）
-assets/banner-dark.svg
-assets/banner-light.gif
-
 # 贪吃蛇 workflow：文件已就位，但当前 PAT 缺 Workflows 权限，
 # 提交会被 GitHub 拒绝（refusing to allow a Personal Access Token to
 # create or update workflow），会连带整次 push 失败。
