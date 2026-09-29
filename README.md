@@ -5,13 +5,13 @@
   改任何一张图后，记得把下面 URL 的 ?v=N 加一 —— GitHub 的 camo 按 URL 缓存。
   ══════════════════════════════════════════════════════════════ -->
 
-<img alt="Haoyi Wang — Geospatial x AI" src="./assets/banner-dark.gif?v=11" width="100%">
+<img alt="Haoyi Wang — Geospatial x AI" src="./assets/banner-dark.gif?v=13" width="100%">
 
 <p align="center">
-  <img alt="typing" src="./assets/typing-dark.gif?v=9" width="100%">
+  <img alt="typing" src="./assets/typing-dark.gif?v=11" width="100%">
 </p>
 
-<div align="center"><img src="./assets/divider.svg?v=1" width="520" alt=""></div>
+<div align="center"><img src="./assets/divider.svg?v=3" width="520" alt=""></div>
 
 ## 🔭 现在
 
@@ -41,7 +41,7 @@
   <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Fusers%2Fwanghaoyi216&query=%24.following&label=Following&color=6B3A3F&style=for-the-badge" alt="Following" />
 </p>
 
-<div align="center"><img src="./assets/divider.svg?v=1" width="520" alt=""></div>
+<div align="center"><img src="./assets/divider.svg?v=3" width="520" alt=""></div>
 
 ## 🧭 关于我
 
@@ -64,7 +64,7 @@
 </tr>
 </table>
 
-<div align="center"><img src="./assets/divider.svg?v=1" width="520" alt=""></div>
+<div align="center"><img src="./assets/divider.svg?v=3" width="520" alt=""></div>
 
 ## 🚀 精选项目
 
@@ -81,7 +81,7 @@
   </a>
 </p>
 
-<div align="center"><img src="./assets/divider.svg?v=1" width="520" alt=""></div>
+<div align="center"><img src="./assets/divider.svg?v=3" width="520" alt=""></div>
 
 ## 🛠️ 技术栈
 
@@ -96,7 +96,7 @@
   <img src="./assets/tech-data.svg?v=9" alt="Data &amp; Infrastructure" width="470" />
 </div>
 
-<div align="center"><img src="./assets/divider.svg?v=1" width="520" alt=""></div>
+<div align="center"><img src="./assets/divider.svg?v=3" width="520" alt=""></div>
 
 ## 📊 贡献轨迹
 
@@ -104,7 +104,7 @@
   <img src="https://streak-stats.demolab.com?user=wanghaoyi216&theme=github-dark&hide_border=true" alt="Contribution streak" />
 </p>
 
-<div align="center"><img src="./assets/divider.svg?v=1" width="520" alt=""></div>
+<div align="center"><img src="./assets/divider.svg?v=3" width="520" alt=""></div>
 
 ## 📫 找到我
 

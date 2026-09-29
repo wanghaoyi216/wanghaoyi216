@@ -23,7 +23,15 @@ import theme as T
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 README = os.path.join(ROOT, "README.md")
-LOCAL_ASSETS = ["banner-dark.gif", "typing-dark.gif", "divider.svg"]
+
+# 主题目录里的文件名 -> README 实际引用的文件名
+# （主题目录不带 -dark 后缀，根目录带；这个映射错了会导致"版本号 bump 了但图没换"的静默失败）
+LOCAL_ASSETS = {
+    "banner.gif": "banner-dark.gif",
+    "typing.gif": "typing-dark.gif",
+    "divider.svg": "divider.svg",
+}
+BUMP_TARGETS = list(LOCAL_ASSETS.values())
 
 
 def usage():
@@ -53,10 +61,12 @@ def apply_theme(name):
     src = os.path.join(ROOT, "assets", "themes", name)
     dst = os.path.join(ROOT, "assets")
 
-    for a in LOCAL_ASSETS:
-        s = os.path.join(src, a)
+    for src_name, dst_name in LOCAL_ASSETS.items():
+        s = os.path.join(src, src_name)
         if os.path.exists(s):
-            shutil.copy2(s, os.path.join(dst, a))
+            shutil.copy2(s, os.path.join(dst, dst_name))
+        else:
+            raise FileNotFoundError("主题 %s 缺少 %s，请先跑 set_theme.py all" % (name, s))
 
     txt = open(README, encoding="utf-8").read()
 
@@ -73,7 +83,7 @@ def apply_theme(name):
             txt = re.sub(r"(-)" + src_c + r"(&logo=)", r"\g<1>" + tgt + r"\g<2>", txt)
 
     # bump 本地图的缓存版本
-    for a in LOCAL_ASSETS:
+    for a in BUMP_TARGETS:
         v = next_version(txt, a)
         if v:
             txt = re.sub(re.escape(a) + r"\?v=\d+", "%s?v=%d" % (a, v), txt)
