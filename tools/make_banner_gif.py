@@ -73,7 +73,17 @@ def ramp_lut(n=256):
 LUT = ramp_lut()
 
 
-def wave_field(phase, amp=0.085, freq=1.6):
+def wave_field(phase, amp=0.10, freq=4.5):
+    """构造波浪渐变场。
+
+    amp/freq 的取值不是随便定的：
+      · freq 必须高到「文字高度内至少跑完一个周期」，
+        才会看到 S 形起伏而不是单纯的斜向渐变。
+        文字高约 55px、画布高 250px，所以 freq 要 ~4.5；
+        之前用 1.4 只覆盖 1/3 周期，出来只是"倾斜"，不是"波浪"。
+      · amp 再大就会明暗不均（字母之间颜色割裂），0.10 附近最平衡。
+    对比图见 preview/wave-compare2.png
+    """
     xs = np.arange(W)[None, :].astype(np.float64)
     ys = np.arange(H)[:, None].astype(np.float64)
     t = xs / W + phase + amp * np.sin(2 * math.pi * (ys / H) * freq + phase * 2.4)

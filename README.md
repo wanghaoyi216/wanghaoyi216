@@ -2,7 +2,7 @@
      避免页面顶部出现一块发灰的浅色图块、和下方内容衔接生硬 -->
 <!-- banner 用 GIF 而不是 SVG：SVG 里的 SMIL 动画在 GitHub 的 <img> 上下文不执行，
      名字的「流动波浪渐变」只有 GIF 能做出来 -->
-<img alt="Haoyi Wang — Geospatial x AI" src="./assets/banner-dark.gif?v=9" width="100%">
+<img alt="Haoyi Wang — Geospatial x AI" src="./assets/banner-dark.gif?v=10" width="100%">
 
 <p align="center">
   <img alt="typing" src="./assets/typing-dark.gif?v=8" width="100%">
