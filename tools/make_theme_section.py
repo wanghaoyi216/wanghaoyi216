@@ -25,35 +25,50 @@ README = os.path.join(ROOT, "README.md")
 BEGIN = "<!--THEMES:BEGIN-->"
 END = "<!--THEMES:END-->"
 
-# 海报是静态资产，不随主题切换变化，所以版本号固定；
-# 真要重新生成海报（make_theme_posters.py）时把这里 +1，否则 camo 会一直给旧图。
-POSTER_V = 1
+# 区块里引用的三样资产
+DIVIDER = "./assets/divider.svg"
+HDR = "./assets/header-themes.webp"
 
 
-def cell(name, th, active):
+def _ver(txt, asset, default="1"):
+    """沿用 README 里该资产当前的 ?v=N。
+
+    这一块是每次切主题都被整体重写的，所以版本号绝不能写死：
+    set_theme 刚 bump 好的号会被这里的硬编码原样冲回去，
+    线上就变成"图换了但 URL 没变 = camo 永远给旧图"。
+    """
+    m = re.search(re.escape(asset) + r"\?v=(\d+)", txt)
+    return m.group(1) if m else default
+
+
+def cell(name, th, active, poster_v):
     mark = "当前 · " if active else ""
     return (
         '<td width="50%%" valign="top">'
-        '<img src="./assets/themes/%s/poster.webp?v=%d" alt="%s %s" width="100%%">'
+        '<img src="./assets/themes/%s/poster.webp?v=%s" alt="%s %s" width="100%%">'
         "<br><sub><b>%s %s</b> · %s%s</sub></td>"
-        % (name, POSTER_V, th["label"], name, th["label"], name, mark, th["desc"])
+        % (name, poster_v, th["label"], name, th["label"], name, mark, th["desc"])
     )
 
 
-def render(active):
+def render(active, txt=""):
+    dv = _ver(txt, DIVIDER, "3")
+    hv = _ver(txt, HDR, "1")
+    pv = _ver(txt, "./assets/themes/warm/poster.webp", "1")
+
     names = list(T.THEMES)
     rows = []
     for i in range(0, len(names), 2):
         pair = names[i:i + 2]
-        cells = "".join(cell(n, T.THEMES[n], n == active) for n in pair)
+        cells = "".join(cell(n, T.THEMES[n], n == active, pv) for n in pair)
         rows.append("<tr>%s</tr>" % cells)
 
     body = "\n".join(rows)
     return "\n".join([
         # 前面先垫一条分隔线，和上面每个区块的间距保持一致
-        '<div align="center"><img src="./assets/divider.svg?v=3" width="520" alt=""></div>',
+        '<div align="center"><img src="%s?v=%s" width="520" alt=""></div>' % (DIVIDER, dv),
         "",
-        "## 🎨 六套配色 · 随时切换",
+        '<img alt="六套配色 · 随时切换" src="%s?v=%s" width="100%%">' % (HDR, hv),
         "",
         "整套主页的视觉——banner、打字机、分隔线、徽章——共用同一份配色定义，",
         "换主题是换一个值的事，banner 和徽章不会各说各话。",
@@ -66,7 +81,7 @@ def render(active):
 
 def apply(active):
     txt = io.open(README, encoding="utf-8").read()
-    block = "%s\n%s\n%s" % (BEGIN, render(active), END)
+    block = "%s\n%s\n%s" % (BEGIN, render(active, txt), END)
 
     if BEGIN in txt and END in txt:
         new = re.sub(re.escape(BEGIN) + r".*?" + re.escape(END), lambda _: block, txt, flags=re.S)

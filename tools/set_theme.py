@@ -20,6 +20,8 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import theme as T
+import make_headers as _headers
+import make_theme_section as _section
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 README = os.path.join(ROOT, "README.md")
@@ -31,6 +33,10 @@ LOCAL_ASSETS = {
     "typing.gif": "typing-dark.gif",
     "divider.svg": "divider.svg",
 }
+# 区块标题图：命名规则固定，单独枚举而不是并进上面的字典，
+# 这样 bump 缓存版本号时不用把 7 个文件名一个个写死。
+HEADERS = [s for s, _, _ in _headers.SECTIONS]
+LOCAL_ASSETS.update({"h-%s.webp" % s: "header-%s.webp" % s for s in HEADERS})
 BUMP_TARGETS = list(LOCAL_ASSETS.values())
 
 
@@ -127,8 +133,7 @@ def apply_theme(name):
 
     # 「六套配色」区块由脚本重渲，保证页面上的"当前"标记和 ACTIVE 永远一致。
     # 手写这个标记迟早会和实际主题对不上，而且不会报任何错。
-    import make_theme_section
-    make_theme_section.apply(name)
+    _section.apply(name)
 
     return th
 
@@ -151,7 +156,8 @@ def main():
             make_typing_gif.build(k, os.path.join(base, "typing.gif"))
             make_divider.build(k, os.path.join(base, "divider.svg"))
             make_theme_posters.build(k)
-        make_theme_section.apply(T.ACTIVE)
+            _headers.build(k)
+        _section.apply(T.ACTIVE)
         print("\n全部主题已生成到 assets/themes/<主题名>/")
         usage()
         return

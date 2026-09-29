@@ -5,15 +5,15 @@
   改任何一张图后，记得把下面 URL 的 ?v=N 加一 —— GitHub 的 camo 按 URL 缓存。
   ══════════════════════════════════════════════════════════════ -->
 
-<img alt="Haoyi Wang — Geospatial x AI" src="./assets/banner-dark.gif?v=13" width="100%">
+<img alt="Haoyi Wang — Geospatial x AI" src="./assets/banner-dark.gif?v=17" width="100%">
 
 <p align="center">
-  <img alt="typing" src="./assets/typing-dark.gif?v=11" width="100%">
+  <img alt="typing" src="./assets/typing-dark.gif?v=15" width="100%">
 </p>
 
-<div align="center"><img src="./assets/divider.svg?v=3" width="520" alt=""></div>
+<div align="center"><img src="./assets/divider.svg?v=7" width="520" alt=""></div>
 
-## 🔭 现在
+<img alt="现在" src="./assets/header-status.webp?v=5" width="100%">
 
 <table>
 <tr>
@@ -41,9 +41,9 @@
   <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Fusers%2Fwanghaoyi216&query=%24.following&label=Following&color=6B3A3F&style=for-the-badge" alt="Following" />
 </p>
 
-<div align="center"><img src="./assets/divider.svg?v=3" width="520" alt=""></div>
+<div align="center"><img src="./assets/divider.svg?v=7" width="520" alt=""></div>
 
-## 🧭 关于我
+<img alt="关于我" src="./assets/header-about.webp?v=5" width="100%">
 
 中国地质大学（武汉）**地理科学与信息工程**硕士在读。事情做得杂，但主线很清楚：**用 AI 和工程能力，去解决具体领域里那些「没人愿意写、但确实很烦」的问题**——导师明天就要的汇报稿、课程平台的重复劳动、读研两年攒下却散落各处的笔记。
 
@@ -64,9 +64,9 @@
 </tr>
 </table>
 
-<div align="center"><img src="./assets/divider.svg?v=3" width="520" alt=""></div>
+<div align="center"><img src="./assets/divider.svg?v=7" width="520" alt=""></div>
 
-## 🚀 精选项目
+<img alt="精选项目" src="./assets/header-projects.webp?v=5" width="100%">
 
 | 项目 | 它做了什么 | 技术栈 |
 | :--- | :--- | :--- |
@@ -81,9 +81,9 @@
   </a>
 </p>
 
-<div align="center"><img src="./assets/divider.svg?v=3" width="520" alt=""></div>
+<div align="center"><img src="./assets/divider.svg?v=7" width="520" alt=""></div>
 
-## 🛠️ 技术栈
+<img alt="技术栈" src="./assets/header-stack.webp?v=5" width="100%">
 
 <div align="center">
   <p><b>主力语言</b></p>
@@ -96,17 +96,17 @@
   <img src="./assets/tech-data.svg?v=9" alt="Data &amp; Infrastructure" width="470" />
 </div>
 
-<div align="center"><img src="./assets/divider.svg?v=3" width="520" alt=""></div>
+<div align="center"><img src="./assets/divider.svg?v=7" width="520" alt=""></div>
 
-## 📊 贡献轨迹
+<img alt="贡献轨迹" src="./assets/header-streak.webp?v=5" width="100%">
 
 <p align="center">
   <img src="https://streak-stats.demolab.com?user=wanghaoyi216&theme=github-dark&hide_border=true" alt="Contribution streak" />
 </p>
 
-<div align="center"><img src="./assets/divider.svg?v=3" width="520" alt=""></div>
+<div align="center"><img src="./assets/divider.svg?v=7" width="520" alt=""></div>
 
-## 📫 找到我
+<img alt="找到我" src="./assets/header-contact.webp?v=5" width="100%">
 
 <p align="center">
   <a href="mailto:haoyiwang156@gmail.com">
@@ -125,9 +125,9 @@
 </p>
 
 <!--THEMES:BEGIN-->
-<div align="center"><img src="./assets/divider.svg?v=3" width="520" alt=""></div>
+<div align="center"><img src="./assets/divider.svg?v=7" width="520" alt=""></div>
 
-## 🎨 六套配色 · 随时切换
+<img alt="六套配色 · 随时切换" src="./assets/header-themes.webp?v=2" width="100%">
 
 整套主页的视觉——banner、打字机、分隔线、徽章——共用同一份配色定义，
 换主题是换一个值的事，banner 和徽章不会各说各话。
