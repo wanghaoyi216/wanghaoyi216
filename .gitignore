@@ -33,10 +33,6 @@ build/
 # 本地预览/校验页，不进公开仓库
 preview/
 
-# A/B 对比中被否决的候选资产（记录在 tools/make_banner_gif.py 顶部）
-assets/banner-dark.gif
-assets/banner-light.gif
-preview/
-
-# 已被 GIF 版取代（SVG 不支持 GitHub 上的动画）
+# 已被淘汰的历史资产（只保留当前在用的那一份）
 assets/banner-dark.svg
+assets/banner-light.gif
