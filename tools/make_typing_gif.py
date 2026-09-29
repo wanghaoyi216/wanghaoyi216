@@ -75,14 +75,17 @@ def build(fname, color):
 
         img = Image.new("RGBA", (W, H), (0, 0, 0, 0))
         d = ImageDraw.Draw(img)
-        x = (W - text_w(d, shown, f)) / 2
+        shown_w = text_w(d, shown, f)
+        x = (W - shown_w) / 2
         y = (H - FS * 1.35) / 2
         d.text((x, y), shown, font=f, fill=rgb)
 
-        # 光标
+        # 光标：必须紧跟当前已显示文字的右缘。
+        # 文字是按「当前长度」居中的，所以左缘 = (W - shown_w)/2，
+        # 右缘 = 左缘 + shown_w = (W + shown_w)/2。
+        # （早前一版用了整行宽度 full 来定位，光标会跑到文字左边很远处。）
         if shown:
-            cw = text_w(d, shown, f)
-            cx = (W - full) / 2 + cw + 3
+            cx = (W + shown_w) / 2 + 3
             cy = (H - FS * 1.35) / 2 + 2
             d.rectangle([cx, cy, cx + 5, cy + FS + 2], fill=rgb)
 

@@ -29,3 +29,6 @@ venv/
 node_modules/
 dist/
 build/
+
+# 本地预览/校验页，不进公开仓库
+preview/

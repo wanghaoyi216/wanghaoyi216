@@ -46,15 +46,17 @@ def build(dark=True):
         chip = "#0f3a4a"
         chip_s = "#7fc9dc"
     else:
-        bg1, bg2, bg3 = "#f2fafd", "#e3f2f8", "#d3e9f2"
-        g1a, g1b = "#9fdcf0", "#e3f2f8"
-        g2a, g2b = "#a8e6da", "#e3f2f8"
-        line = "#2b7f9c"
-        grid = "#a9cede"
-        title = "#0b2b3a"
-        sub = "#1d6d87"
+        # 浅色版实测过：原来的配色在白底上等高线几乎看不见、底部一条深色横条很突兀。
+        # 这里换成更有对比度的浅色调，并让底部收边更干净。
+        bg1, bg2, bg3 = "#eaf6fb", "#d2e9f4", "#b9dced"
+        g1a, g1b = "#8fd3ec", "#d2e9f4"
+        g2a, g2b = "#8fdccb", "#d2e9f4"
+        line = "#16688c"          # 比原来深一档，白底上才看得清
+        grid = "#8ab6c9"
+        title = "#062735"
+        sub = "#0e5b7a"
         chip = "#ffffff"
-        chip_s = "#1d6d87"
+        chip_s = "#3d8cad"
 
     s = []
     s.append(
@@ -97,13 +99,17 @@ def build(dark=True):
     )
     s.append("</defs>")
 
+    # 浅色底上同样的透明度会显得太淡，所以按主题给一个系数
+    cboost = 1.0 if dark else 1.55
+    gboost = 1.0 if dark else 1.6
+
     # ---- 背景 ----
     s.append('<rect width="%d" height="%d" fill="url(#bg)"/>' % (W, H))
     s.append('<rect width="%d" height="%d" fill="url(#g1)"/>' % (W, H))
     s.append('<rect width="%d" height="%d" fill="url(#g2)"/>' % (W, H))
 
     # ---- 地图网格 ----
-    s.append('<g stroke="%s" stroke-width="0.6" opacity="0.20">' % grid)
+    s.append('<g stroke="%s" stroke-width="0.6" opacity="%.2f">' % (grid, 0.20 * gboost))
     for x in range(0, W + 1, 40):
         s.append('<line x1="%d" y1="0" x2="%d" y2="%d"/>' % (x, x, H))
     for y in range(0, H + 1, 30):
@@ -115,7 +121,7 @@ def build(dark=True):
     s.append('<animateTransform attributeName="transform" type="rotate" '
              'from="0 600 150" to="360 600 150" dur="180s" repeatCount="indefinite"/>')
     for d, op in topo_paths(300, 150, 120, seed=1.0, rings=8):
-        s.append('<path d="%s" opacity="%.3f"/>' % (d, op * 0.75))
+        s.append('<path d="%s" opacity="%.3f"/>' % (d, min(0.92, op * 0.75 * cboost)))
     s.append("</g>")
 
     s.append('<g fill="none" stroke="%s" stroke-width="1.0" stroke-linecap="round" '
@@ -123,7 +129,7 @@ def build(dark=True):
     s.append('<animateTransform attributeName="transform" type="rotate" '
              'from="360 900 150" to="0 900 150" dur="220s" repeatCount="indefinite"/>')
     for d, op in topo_paths(920, 150, 110, seed=2.3, rings=7):
-        s.append('<path d="%s" opacity="%.3f"/>' % (d, op * 0.55))
+        s.append('<path d="%s" opacity="%.3f"/>' % (d, min(0.9, op * 0.55 * cboost)))
     s.append("</g>")
 
     # 中央等高线（正对标题，做背光）
@@ -195,12 +201,14 @@ def build(dark=True):
     s.append("</g>")
 
     # ---- 底部强调线（带流光）----
-    s.append('<rect x="0" y="288" width="%d" height="2" fill="url(#accent)" opacity="0.75"/>' % W)
+    # 深浅两版用各自的强调色，避免浅色版出现一条突兀的深色横条
+    accent = "#0e7ea8" if dark else "#3d9dc4"
+    s.append('<rect x="0" y="288" width="%d" height="2" fill="%s" opacity="0.85"/>' % (W, accent))
     s.append(
-        '<rect x="-260" y="287" width="260" height="4" fill="#7ff0ff" opacity="0.9">'
+        '<rect x="-260" y="287" width="260" height="4" fill="%s" opacity="0.9">'
         '<animate attributeName="x" values="-260;%d" dur="7s" repeatCount="indefinite"/>'
         '<animate attributeName="opacity" values="0;0.9;0" dur="7s" repeatCount="indefinite"/>'
-        '</rect>' % (W + 20)
+        '</rect>' % ("#7ff0ff" if dark else "#7fd0e8", W + 20)
     )
 
     s.append("</svg>")
