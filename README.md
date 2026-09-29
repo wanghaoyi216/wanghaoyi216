@@ -6,9 +6,9 @@
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=Noto+Sans+SC&weight=600&size=23&pause=3000&color=58A6FF&center=true&vCenter=true&width=680&height=70&lines=用+AI+解决+科研和教学里的麻烦事;Python+%2F+Java+%2F+Vue+全栈开发;Building+tools+that+actually+run">
-    <source media="(prefers-color-scheme: light)" srcset="https://readme-typing-svg.demolab.com?font=Noto+Sans+SC&weight=600&size=23&pause=3000&color=0969DA&center=true&vCenter=true&width=680&height=70&lines=用+AI+解决+科研和教学里的麻烦事;Python+%2F+Java+%2F+Vue+全栈开发;Building+tools+that+actually+run">
-    <img alt="typing" src="https://readme-typing-svg.demolab.com?font=Noto+Sans+SC&weight=600&size=23&pause=3000&color=58A6FF&center=true&vCenter=true&width=680&height=70&lines=用+AI+解决+科研和教学里的麻烦事;Python+%2F+Java+%2F+Vue+全栈开发;Building+tools+that+actually+run">
+    <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=Noto+Sans+SC&weight=600&size=23&pause=3000&color=58A6FF&center=true&vCenter=true&width=680&height=70&lines=%E7%94%A8+AI+%E8%A7%A3%E5%86%B3%E7%A7%91%E7%A0%94%E5%92%8C%E6%95%99%E5%AD%A6%E9%87%8C%E7%9A%84%E9%BA%BB%E7%83%A6%E4%BA%8B;Python+%2F+Java+%2F+Vue+%E5%85%A8%E6%A0%88%E5%BC%80%E5%8F%91;Building+tools+that+actually+run">
+    <source media="(prefers-color-scheme: light)" srcset="https://readme-typing-svg.demolab.com?font=Noto+Sans+SC&weight=600&size=23&pause=3000&color=0969DA&center=true&vCenter=true&width=680&height=70&lines=%E7%94%A8+AI+%E8%A7%A3%E5%86%B3%E7%A7%91%E7%A0%94%E5%92%8C%E6%95%99%E5%AD%A6%E9%87%8C%E7%9A%84%E9%BA%BB%E7%83%A6%E4%BA%8B;Python+%2F+Java+%2F+Vue+%E5%85%A8%E6%A0%88%E5%BC%80%E5%8F%91;Building+tools+that+actually+run">
+    <img alt="typing" src="https://readme-typing-svg.demolab.com?font=Noto+Sans+SC&weight=600&size=23&pause=3000&color=58A6FF&center=true&vCenter=true&width=680&height=70&lines=%E7%94%A8+AI+%E8%A7%A3%E5%86%B3%E7%A7%91%E7%A0%94%E5%92%8C%E6%95%99%E5%AD%A6%E9%87%8C%E7%9A%84%E9%BA%BB%E7%83%A6%E4%BA%8B;Python+%2F+Java+%2F+Vue+%E5%85%A8%E6%A0%88%E5%BC%80%E5%8F%91;Building+tools+that+actually+run">
   </picture>
 </p>
 
@@ -20,15 +20,14 @@
   <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
   <img src="https://img.shields.io/badge/Spring_Cloud-6DB33F?style=for-the-badge&logo=spring&logoColor=white" alt="Spring Cloud" />
   <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" />
-  <img src="https://img.shields.io/badge/RAG-2A9D8F?style=for-the-badge" alt="RAG" />
 </p>
 
 <p align="center">
   <img src="https://komarev.com/ghpvc/?username=wanghaoyi216&color=0077B6&label=Profile%20Views&style=flat-square" alt="Profile views" />
   <img src="https://img.shields.io/github/followers/wanghaoyi216?label=Followers&color=0077B6&style=flat-square" alt="Followers" />
   <img src="https://img.shields.io/github/stars/wanghaoyi216?label=Stars&color=0077B6&style=flat-square" alt="Stars" />
-  <img src="https://img.shields.io/github/repos/wanghaoyi216?label=Repos&color=0077B6&style=flat-square" alt="Repos" />
-  <img src="https://img.shields.io/github/commits-since/wanghaoyi216/2026-01-01?style=flat-square&label=Commits%202026&color=2A9D8F" alt="Commits" />
+  <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Fusers%2Fwanghaoyi216&query=%24.public_repos&label=Repos&color=0077B6&style=flat-square" alt="Repos" />
+  <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Fusers%2Fwanghaoyi216&query=%24.following&label=Following&color=2A9D8F&style=flat-square" alt="Following" />
 </p>
 
 ---
