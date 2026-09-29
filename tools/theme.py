@@ -25,6 +25,7 @@
 THEMES = {
     "warm": {
         "label": "暖阳",
+        "desc": "桃红 → 橙金",
         "bg": ("#1A0F21", "#4E2830"),
         "name_grad": ["#FF8A8F", "#FFB07A", "#FFE9C0", "#FFC56C", "#F28A3A"],
         "glows": ["#FF8A76", "#FFC678", "#FFA8C8"],
@@ -41,6 +42,7 @@ THEMES = {
     },
     "aurora": {
         "label": "极光",
+        "desc": "薄荷 → 冰蓝",
         "bg": ("#04141F", "#0B3A44"),
         "name_grad": ["#3FE0B0", "#7FF0D8", "#E8FFFB", "#5AC8E8", "#2E7FD4"],
         "glows": ["#2FD4A8", "#48B8E8", "#8C7BE8"],
@@ -57,6 +59,7 @@ THEMES = {
     },
     "sakura": {
         "label": "樱粉",
+        "desc": "樱粉 → 淡紫",
         "bg": ("#1C0E1C", "#4A1F3A"),
         "name_grad": ["#FF9EC4", "#FFC2DA", "#FFF0F6", "#E0A8F0", "#A87CD4"],
         "glows": ["#FF8FB8", "#E0A0E8", "#FFC0D8"],
@@ -73,6 +76,7 @@ THEMES = {
     },
     "nebula": {
         "label": "星海",
+        "desc": "靛蓝 → 洋红",
         "bg": ("#0A0A24", "#241548"),
         "name_grad": ["#5A8CFF", "#8C6CFF", "#F0EEFF", "#C86CFF", "#FF5A9C"],
         "glows": ["#5A6CFF", "#A84CFF", "#FF5A9C"],
@@ -89,6 +93,7 @@ THEMES = {
     },
     "mint": {
         "label": "薄荷",
+        "desc": "薄荷绿 → 青柠",
         "bg": ("#041A18", "#0E4038"),
         "name_grad": ["#7FF0C0", "#A8F5D8", "#F0FFF8", "#5CD8C0", "#2E9C8A"],
         "glows": ["#4CD8B0", "#68E0C8", "#9CE8D0"],
@@ -105,6 +110,7 @@ THEMES = {
     },
     "noir": {
         "label": "墨金",
+        "desc": "哑光金 · 黑底",
         "bg": ("#0A0A0A", "#1E1A14"),
         "name_grad": ["#B08A3C", "#D4B05C", "#FFF6DC", "#E0C070", "#8A6A2A"],
         "glows": ["#B08A3C", "#8A6A2A", "#D4B05C"],

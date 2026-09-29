@@ -75,7 +75,12 @@ def name_mask():
     return m
 
 
-def build(theme_name, out_path):
+def render_frames(theme_name):
+    """只负责把每一帧画出来，不做任何编码。
+
+    单独拆出来是为了让 make_theme_posters.py 能复用同一套绘制逻辑去出静态海报，
+    避免"海报和 banner 长得不一样"这种两套代码各自漂移的问题。
+    """
     th = T.get(theme_name)
     lut = T.name_lut(th)
     base = vgrad(T.hx(th["bg"][0]), T.hx(th["bg"][1]))
@@ -131,7 +136,11 @@ def build(theme_name, out_path):
         sx = int(-240 + (W + 240) * ph)
         d.rectangle([sx, H - 8, sx + 240, H - 1], fill=star + (235,))
         frames.append(img)
+    return frames
 
+
+def build(theme_name, out_path):
+    frames = render_frames(theme_name)
     sample = Image.new("RGB", (W, H * 2))
     for i in range(2):
         sample.paste(frames[i], (0, H * i))

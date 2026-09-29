@@ -123,3 +123,18 @@
 <p align="center">
   <sub>如果你也在做「AI + 垂直领域」的东西，欢迎来找我聊聊 —— 一个人的想法，往往需要第二个人的数据才能活下来。</sub>
 </p>
+
+<!--THEMES:BEGIN-->
+<div align="center"><img src="./assets/divider.svg?v=3" width="520" alt=""></div>
+
+## 🎨 六套配色 · 随时切换
+
+整套主页的视觉——banner、打字机、分隔线、徽章——共用同一份配色定义，
+换主题是换一个值的事，banner 和徽章不会各说各话。
+
+<table>
+<tr><td width="50%" valign="top"><img src="./assets/themes/warm/poster.webp?v=1" alt="暖阳 warm" width="100%"><br><sub><b>暖阳 warm</b> · 当前 · 桃红 → 橙金</sub></td><td width="50%" valign="top"><img src="./assets/themes/aurora/poster.webp?v=1" alt="极光 aurora" width="100%"><br><sub><b>极光 aurora</b> · 薄荷 → 冰蓝</sub></td></tr>
+<tr><td width="50%" valign="top"><img src="./assets/themes/sakura/poster.webp?v=1" alt="樱粉 sakura" width="100%"><br><sub><b>樱粉 sakura</b> · 樱粉 → 淡紫</sub></td><td width="50%" valign="top"><img src="./assets/themes/nebula/poster.webp?v=1" alt="星海 nebula" width="100%"><br><sub><b>星海 nebula</b> · 靛蓝 → 洋红</sub></td></tr>
+<tr><td width="50%" valign="top"><img src="./assets/themes/mint/poster.webp?v=1" alt="薄荷 mint" width="100%"><br><sub><b>薄荷 mint</b> · 薄荷绿 → 青柠</sub></td><td width="50%" valign="top"><img src="./assets/themes/noir/poster.webp?v=1" alt="墨金 noir" width="100%"><br><sub><b>墨金 noir</b> · 哑光金 · 黑底</sub></td></tr>
+</table>
+<!--THEMES:END-->

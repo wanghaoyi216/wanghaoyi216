@@ -124,6 +124,12 @@ def apply_theme(name):
 
     open(README, "w", encoding="utf-8").write(txt)
     set_active(name)
+
+    # 「六套配色」区块由脚本重渲，保证页面上的"当前"标记和 ACTIVE 永远一致。
+    # 手写这个标记迟早会和实际主题对不上，而且不会报任何错。
+    import make_theme_section
+    make_theme_section.apply(name)
+
     return th
 
 
@@ -139,11 +145,13 @@ def main():
         for k in T.THEMES:
             if k != T.ACTIVE:
                 print("  已生成主题：%s (%s)" % (k, T.THEMES[k]["label"]))
-            import make_banner_gif, make_typing_gif, make_divider
+            import make_banner_gif, make_typing_gif, make_divider, make_theme_posters
             base = os.path.join(ROOT, "assets", "themes", k)
             make_banner_gif.build(k, os.path.join(base, "banner.gif"))
             make_typing_gif.build(k, os.path.join(base, "typing.gif"))
             make_divider.build(k, os.path.join(base, "divider.svg"))
+            make_theme_posters.build(k)
+        make_theme_section.apply(T.ACTIVE)
         print("\n全部主题已生成到 assets/themes/<主题名>/")
         usage()
         return
