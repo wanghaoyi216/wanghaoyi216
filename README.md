@@ -8,10 +8,10 @@
   改任何一张图后，记得把下面 URL 的 ?v=N 加一 —— GitHub 的 camo 按 URL 缓存。
   ══════════════════════════════════════════════════════════════ -->
 
-<img alt="Haoyi Wang — Geospatial x AI" src="./assets/banner.svg?v=4" width="100%">
+<img alt="Haoyi Wang — Geospatial x AI" src="./assets/banner.svg?v=8" width="100%">
 
 <p align="center">
-  <img alt="typing" src="./assets/typing.gif?v=4" width="100%">
+  <img alt="typing" src="./assets/typing.gif?v=8" width="100%">
 </p>
 
 ## 🔭 现在
@@ -35,11 +35,11 @@
 </p>
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=wanghaoyi216&color=F0C3D1&label=Profile%20Views&style=for-the-badge" alt="Profile views" />
-  <img src="https://img.shields.io/github/followers/wanghaoyi216?label=Followers&color=F0C3D1&style=for-the-badge" alt="Followers" />
-  <img src="https://img.shields.io/github/stars/wanghaoyi216?label=Stars&color=F0C3D1&style=for-the-badge" alt="Stars" />
-  <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Fusers%2Fwanghaoyi216&query=%24.public_repos&label=Repos&color=F0C3D1&style=for-the-badge" alt="Repos" />
-  <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Fusers%2Fwanghaoyi216&query=%24.following&label=Following&color=F0C3D1&style=for-the-badge" alt="Following" />
+  <img src="https://komarev.com/ghpvc/?username=wanghaoyi216&color=F0C3D1&labelColor=F0C3D1&label=Profile%20Views&style=for-the-badge" alt="Profile views" />
+  <img src="https://img.shields.io/github/followers/wanghaoyi216?label=Followers&color=F0C3D1&labelColor=F0C3D1&style=for-the-badge" alt="Followers" />
+  <img src="https://img.shields.io/github/stars/wanghaoyi216?label=Stars&color=F0C3D1&labelColor=F0C3D1&style=for-the-badge" alt="Stars" />
+  <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Fusers%2Fwanghaoyi216&query=%24.public_repos&label=Repos&color=F0C3D1&labelColor=F0C3D1&style=for-the-badge" alt="Repos" />
+  <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Fusers%2Fwanghaoyi216&query=%24.following&label=Following&color=F0C3D1&labelColor=F0C3D1&style=for-the-badge" alt="Following" />
 </p>
 
 ## 🧭 关于我

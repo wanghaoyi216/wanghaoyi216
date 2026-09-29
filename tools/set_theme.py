@@ -36,6 +36,16 @@ BUMP_TARGETS = list(LOCAL_ASSETS.values())
 # 不染色的话它默认是亮绿色，在浅粉页面里格外扎眼。
 STREAK_RE = re.compile(r"https://streak-stats\.demolab\.com\?[^\s\")']+")
 
+# shields.io 里颜色可能出现在两处：路径段的 -颜色，和查询串的 color= / labelColor=。
+# 注意 labelColor 的 C 是大写，写成 r"color=" 会漏掉它 —— 换主题时 value 变了、
+# label 侧还留着上一套的颜色，深色模式下那块就糊进背景里。
+# 所以这里显式列出两个参数名，不要用 re.I 整体忽略大小写（那会连十六进制值一起放宽）。
+_COLOR_KEY = r"(-|(?:labelColor|color)=)"
+
+
+def _color_re(c):
+    return _COLOR_KEY + c + r"(?=[?&])"
+
 
 def usage():
     print("可用主题：")
@@ -85,7 +95,7 @@ def leftover_colors(txt, name):
             c = other[key].lstrip("#").upper()
             if c in mine or c not in txt:
                 continue
-            n = len(re.findall(r"(-|color=)" + c + r"(?=[?&])", txt))
+            n = len(re.findall(_color_re(c), txt))
             if n:
                 bad.append("  %s 的 %s 色 %s 仍残留 %d 处" % (other_name, key, c, n))
     return bad
@@ -115,7 +125,7 @@ def apply_theme(name):
             src_c = other[key].lstrip("#").upper()
             if src_c == tgt:
                 continue
-            txt, n = re.subn(r"(-|color=)" + src_c + r"(?=[?&])", r"\g<1>" + tgt, txt)
+            txt, n = re.subn(_color_re(src_c), r"\g<1>" + tgt, txt)
             if n:
                 print("    %-7s -> %-7s  %d 处" % (src_c, tgt, n))
 
