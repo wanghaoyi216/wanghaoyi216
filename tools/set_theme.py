@@ -62,6 +62,22 @@ def next_version(txt, asset):
     return int(m.group(1)) + 1
 
 
+# streak-stats 卡片：全站唯一不受主题控制的第三方图。
+# 它支持 background/border/stroke/ring/fire/sideNums/sideLabels/title 八个自定义色，
+# 所以不必换掉它（那会丢掉实时数据），直接把它染成当前主题即可——
+# 默认 theme=github-dark 的亮绿色是整页唯一的冷色，也是"撞色"的来源。
+STREAK_RE = re.compile(r"https://streak-stats\.demolab\.com\?[^\s\")']+")
+
+
+def streak_url(th, user="wanghaoyi216"):
+    c = lambda v: v.lstrip("#").upper()
+    return ("https://streak-stats.demolab.com?user=%s&hide_border=true"
+            "&background=%s&border=%s&stroke=%s&ring=%s&fire=%s"
+            "&sideNums=%s&sideLabels=%s&title=%s"
+            % (user, c(th["bg"][0]), c(th["bg"][0]), c(th["chips"][0]), c(th["contour"]),
+               c(th["accent"]), c(th["sub"]), c(th["badge_cta"]), c(th["sub"])))
+
+
 def leftover_colors(txt, name):
     """换完色之后扫一遍 README，看还有没有别的主题色残留。
 
@@ -123,6 +139,11 @@ def apply_theme(name):
         v = next_version(txt, a)
         if v:
             txt = re.sub(re.escape(a) + r"\?v=\d+", "%s?v=%d" % (a, v), txt)
+
+    # streak 卡片换色（全站最后一个不受主题控制的元素）
+    txt, n = STREAK_RE.subn(streak_url(th), txt)
+    if n != 1:
+        raise RuntimeError("README 里应该正好有 1 个 streak 卡片，实际 %d 个" % n)
 
     bad = leftover_colors(txt, name)
     if bad:
