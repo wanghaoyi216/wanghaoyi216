@@ -143,10 +143,10 @@ def build(fname):
         d.ellipse([-140, -40, 290, 180], fill=(14, 126, 168, 34))
         d.ellipse([720, 120, 1040, 310], fill=(18, 165, 148, 30))
 
-        for x in range(0, W + 1, 40):
-            d.line([(x, 0), (x, H)], fill=GRID + (32,), width=1)
-        for y in range(0, H + 1, 30):
-            d.line([(0, y), (W, y)], fill=GRID + (32,), width=1)
+        # 这里原本还有一层地图网格线（40px 间距）。
+        # 实测它几乎看不见（32/255 透明度），却让 GIF 从 385KB 涨到 554KB ——
+        # 细密线条是 GIF 压缩的天敌（每帧独立压缩、不做帧间差分，静止的网格也要反复压）。
+        # 已删除。
 
         for pts in topo(215, 125, 88, 1.0, 5):
             d.line(pts + [pts[0]], fill=LINE + (110,), width=2, joint="curve")
