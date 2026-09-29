@@ -32,3 +32,8 @@ build/
 
 # 本地预览/校验页，不进公开仓库
 preview/
+
+# A/B 对比中被否决的候选资产（记录在 tools/make_banner_gif.py 顶部）
+assets/banner-dark.gif
+assets/banner-light.gif
+preview/
