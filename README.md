@@ -6,9 +6,9 @@
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/typing-dark.svg?v=3">
-    <source media="(prefers-color-scheme: light)" srcset="./assets/typing-light.svg?v=3">
-    <img alt="typing" src="./assets/typing-dark.svg?v=3" width="100%">
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/typing-dark.gif?v=1">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/typing-light.gif?v=1">
+    <img alt="typing" src="./assets/typing-dark.gif?v=1" width="100%">
   </picture>
 </p>
 
