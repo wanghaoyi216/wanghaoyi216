@@ -26,16 +26,20 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "assets")
 
 W, H = 780, 84
-FS = 25
+FS = 26
 FDIR = r"C:\Windows\Fonts"
-CJK_FONT = os.path.join(FDIR, "STXINGKA.TTF")   # 华文行楷
-LATIN = os.path.join(FDIR, "comic.ttf")          # Comic Sans MS
+CJK_FONT = os.path.join(FDIR, "STXINGKA.TTF")   # 华文行楷（本身就是连笔书法）
+LATIN = os.path.join(FDIR, "COMICBD.TTF")        # Comic Sans MS Bold
 
 LINES = [
     "用 AI 解决科研和教学里的麻烦事",
     "Python / Java / Vue 全栈开发",
     "Building tools that actually run",
 ]
+
+# Comic Sans MS 没有真正的连字字形（无 fi/fl 之类），
+# 所以用「负字距」把字母往一起挤，制造用户要的连笔感。
+TRACK = -1.6
 
 TYPE_F, HOLD_F, ERASE_F = 0.58, 0.16, 0.26
 
@@ -54,8 +58,13 @@ def face(ch, size):
 
 
 def draw_line(d, text, cx, cy, color):
-    """按字符分别选字体绘制，返回整行宽度。"""
-    widths = [d.textlength(ch, font=face(ch, FS)) for ch in text]
+    """按字符分别选字体绘制，返回整行宽度。CJK 不收紧字距（行楷本就连贯）。"""
+    widths = []
+    for ch in text:
+        w = d.textlength(ch, font=face(ch, FS))
+        if not is_cjk(ch) and ch != " ":
+            w += TRACK
+        widths.append(w)
     total = sum(widths)
     x = cx - total / 2.0
     for ch, w in zip(text, widths):
@@ -66,7 +75,13 @@ def draw_line(d, text, cx, cy, color):
 
 
 def line_width(d, text):
-    return sum(d.textlength(ch, font=face(ch, FS)) for ch in text)
+    t = 0.0
+    for ch in text:
+        w = d.textlength(ch, font=face(ch, FS))
+        if not is_cjk(ch) and ch != " ":
+            w += TRACK
+        t += w
+    return t
 
 
 def build(fname, color):
