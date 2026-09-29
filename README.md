@@ -1,14 +1,14 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/banner-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/banner-light.svg">
-  <img alt="Haoyi Wang — Geospatial x AI" src="./assets/banner-dark.svg" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/banner-dark.svg?v=3">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/banner-light.svg?v=3">
+  <img alt="Haoyi Wang — Geospatial x AI" src="./assets/banner-dark.svg?v=3" width="100%">
 </picture>
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/typing-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="./assets/typing-light.svg">
-    <img alt="typing" src="./assets/typing-dark.svg" width="100%">
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/typing-dark.svg?v=3">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/typing-light.svg?v=3">
+    <img alt="typing" src="./assets/typing-dark.svg?v=3" width="100%">
   </picture>
 </p>
 
@@ -86,15 +86,15 @@
 
 **主力语言**
 
-<img src="./assets/tech-languages.svg" alt="Languages" />
+<img src="./assets/tech-languages.svg?v=3" alt="Languages" />
 
 **框架与工具**
 
-<img src="./assets/tech-frameworks.svg" alt="Frameworks" />
+<img src="./assets/tech-frameworks.svg?v=3" alt="Frameworks" />
 
 **数据与基础设施**
 
-<img src="./assets/tech-data.svg" alt="Data & Infrastructure" />
+<img src="./assets/tech-data.svg?v=3" alt="Data & Infrastructure" />
 
 </p>
 
