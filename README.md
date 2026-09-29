@@ -6,22 +6,24 @@
   <img alt="typing" src="./assets/typing-dark.gif?v=7" width="100%">
 </p>
 
+<!-- 徽章统一用海洋蓝单色系：品牌原色（亮绿/亮橙/亮红）和 banner 的克制调性打架，
+     统一后既协调又保留 logo 辨识度。数据徽章用更深的同色系退到次要层。 -->
 <p align="center">
-  <img src="https://img.shields.io/badge/Geospatial_AI-0077B6?style=for-the-badge&logo=googleearth&logoColor=white" alt="Geospatial AI" />
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
-  <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java" />
-  <img src="https://img.shields.io/badge/Vue-42B883?style=for-the-badge&logo=vuedotjs&logoColor=white" alt="Vue" />
-  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
-  <img src="https://img.shields.io/badge/Spring_Cloud-6DB33F?style=for-the-badge&logo=spring&logoColor=white" alt="Spring Cloud" />
-  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" />
+  <img src="https://img.shields.io/badge/Geospatial_AI-0B5C7A?style=for-the-badge&logo=googleearth&logoColor=white" alt="Geospatial AI" />
+  <img src="https://img.shields.io/badge/Python-0B5C7A?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+  <img src="https://img.shields.io/badge/Java-0B5C7A?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java" />
+  <img src="https://img.shields.io/badge/Vue-0B5C7A?style=for-the-badge&logo=vuedotjs&logoColor=white" alt="Vue" />
+  <img src="https://img.shields.io/badge/TypeScript-0B5C7A?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Spring_Cloud-0B5C7A?style=for-the-badge&logo=spring&logoColor=white" alt="Spring Cloud" />
+  <img src="https://img.shields.io/badge/Docker-0B5C7A?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" />
 </p>
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=wanghaoyi216&color=0077B6&label=Profile%20Views&style=flat-square" alt="Profile views" />
-  <img src="https://img.shields.io/github/followers/wanghaoyi216?label=Followers&color=0077B6&style=flat-square" alt="Followers" />
-  <img src="https://img.shields.io/github/stars/wanghaoyi216?label=Stars&color=0077B6&style=flat-square" alt="Stars" />
-  <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Fusers%2Fwanghaoyi216&query=%24.public_repos&label=Repos&color=0077B6&style=flat-square" alt="Repos" />
-  <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Fusers%2Fwanghaoyi216&query=%24.following&label=Following&color=2A9D8F&style=flat-square" alt="Following" />
+  <img src="https://komarev.com/ghpvc/?username=wanghaoyi216&color=0E3A4A&label=Profile%20Views&style=for-the-badge" alt="Profile views" />
+  <img src="https://img.shields.io/github/followers/wanghaoyi216?label=Followers&color=0E3A4A&style=for-the-badge" alt="Followers" />
+  <img src="https://img.shields.io/github/stars/wanghaoyi216?label=Stars&color=0E3A4A&style=for-the-badge" alt="Stars" />
+  <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Fusers%2Fwanghaoyi216&query=%24.public_repos&label=Repos&color=0E3A4A&style=for-the-badge" alt="Repos" />
+  <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Fusers%2Fwanghaoyi216&query=%24.following&label=Following&color=0E3A4A&style=for-the-badge" alt="Following" />
 </p>
 
 ---
@@ -68,7 +70,7 @@
 
 <p align="center">
   <a href="https://github.com/wanghaoyi216?tab=repositories">
-    <img src="https://img.shields.io/badge/查看全部仓库-0077B6?style=for-the-badge&logo=github&logoColor=white" alt="all repos" />
+    <img src="https://img.shields.io/badge/查看全部仓库-0B5C7A?style=for-the-badge&logo=github&logoColor=white" alt="all repos" />
   </a>
 </p>
 
@@ -101,13 +103,13 @@
 
 <p align="center">
   <a href="mailto:haoyiwang156@gmail.com">
-    <img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+    <img src="https://img.shields.io/badge/Email-0B5C7A?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
   </a>
   <a href="https://github.com/wanghaoyi216" target="_blank" rel="noopener">
-    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+    <img src="https://img.shields.io/badge/GitHub-0B5C7A?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
   </a>
   <a href="https://github.com/wanghaoyi216?tab=repositories" target="_blank" rel="noopener">
-    <img src="https://img.shields.io/badge/仓库-0077B6?style=for-the-badge&logo=github&logoColor=white" alt="Repos" />
+    <img src="https://img.shields.io/badge/仓库-0B5C7A?style=for-the-badge&logo=github&logoColor=white" alt="Repos" />
   </a>
 </p>
 
