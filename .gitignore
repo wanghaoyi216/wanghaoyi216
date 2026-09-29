@@ -37,3 +37,6 @@ preview/
 assets/banner-dark.gif
 assets/banner-light.gif
 preview/
+
+# 已被 GIF 版取代（SVG 不支持 GitHub 上的动画）
+assets/banner-dark.svg

@@ -1,9 +1,11 @@
 <!-- hero 恒定深色：浅色主题访客看到的也是同一张深色 banner，
      避免页面顶部出现一块发灰的浅色图块、和下方内容衔接生硬 -->
-<img alt="Haoyi Wang — Geospatial x AI" src="./assets/banner-dark.svg?v=7" width="100%">
+<!-- banner 用 GIF 而不是 SVG：SVG 里的 SMIL 动画在 GitHub 的 <img> 上下文不执行，
+     名字的「流动波浪渐变」只有 GIF 能做出来 -->
+<img alt="Haoyi Wang — Geospatial x AI" src="./assets/banner-dark.gif?v=8" width="100%">
 
 <p align="center">
-  <img alt="typing" src="./assets/typing-dark.gif?v=7" width="100%">
+  <img alt="typing" src="./assets/typing-dark.gif?v=8" width="100%">
 </p>
 
 <!-- 徽章统一用海洋蓝单色系：品牌原色（亮绿/亮橙/亮红）和 banner 的克制调性打架，
@@ -80,13 +82,13 @@
 
 <div align="center">
   <p><b>主力语言</b></p>
-  <img src="./assets/tech-languages.svg?v=7" alt="Languages" width="380" />
+  <img src="./assets/tech-languages.svg?v=8" alt="Languages" width="380" />
   <br />
   <p><b>框架与工具</b></p>
-  <img src="./assets/tech-frameworks.svg?v=7" alt="Frameworks" width="380" />
+  <img src="./assets/tech-frameworks.svg?v=8" alt="Frameworks" width="380" />
   <br />
   <p><b>数据与基础设施</b></p>
-  <img src="./assets/tech-data.svg?v=7" alt="Data &amp; Infrastructure" width="470" />
+  <img src="./assets/tech-data.svg?v=8" alt="Data &amp; Infrastructure" width="470" />
 </div>
 
 ---

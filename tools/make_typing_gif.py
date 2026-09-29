@@ -28,8 +28,8 @@ OUT = os.path.join(ROOT, "assets")
 W, H = 780, 84
 FS = 25
 FDIR = r"C:\Windows\Fonts"
-CJK_LIGHT = os.path.join(FDIR, "msyhl.ttc")   # 微软雅黑 Light
-LATIN = os.path.join(FDIR, "BOD_R.TTF")       # Bodoni MT
+CJK_FONT = os.path.join(FDIR, "STXINGKA.TTF")   # 华文行楷
+LATIN = os.path.join(FDIR, "comic.ttf")          # Comic Sans MS
 
 LINES = [
     "用 AI 解决科研和教学里的麻烦事",
@@ -49,7 +49,7 @@ def is_cjk(ch):
 def face(ch, size):
     key = (is_cjk(ch), size)
     if key not in _fc:
-        _fc[key] = ImageFont.truetype(CJK_LIGHT if key[0] else LATIN, size)
+        _fc[key] = ImageFont.truetype(CJK_FONT if key[0] else LATIN, size)
     return _fc[key]
 
 
@@ -120,3 +120,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
