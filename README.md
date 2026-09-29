@@ -1,15 +1,9 @@
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/banner-dark.svg?v=5">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/banner-light.svg?v=5">
-  <img alt="Haoyi Wang — Geospatial x AI" src="./assets/banner-dark.svg?v=5" width="100%">
-</picture>
+<!-- hero 恒定深色：浅色主题访客看到的也是同一张深色 banner，
+     避免页面顶部出现一块发灰的浅色图块、和下方内容衔接生硬 -->
+<img alt="Haoyi Wang — Geospatial x AI" src="./assets/banner-dark.svg?v=6" width="100%">
 
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/typing-dark.gif?v=5">
-    <source media="(prefers-color-scheme: light)" srcset="./assets/typing-light.gif?v=5">
-    <img alt="typing" src="./assets/typing-dark.gif?v=5" width="100%">
-  </picture>
+  <img alt="typing" src="./assets/typing-dark.gif?v=6" width="100%">
 </p>
 
 <p align="center">
@@ -84,13 +78,13 @@
 
 <div align="center">
   <p><b>主力语言</b></p>
-  <img src="./assets/tech-languages.svg?v=5" alt="Languages" width="380" />
+  <img src="./assets/tech-languages.svg?v=6" alt="Languages" width="380" />
   <br />
   <p><b>框架与工具</b></p>
-  <img src="./assets/tech-frameworks.svg?v=5" alt="Frameworks" width="380" />
+  <img src="./assets/tech-frameworks.svg?v=6" alt="Frameworks" width="380" />
   <br />
   <p><b>数据与基础设施</b></p>
-  <img src="./assets/tech-data.svg?v=5" alt="Data &amp; Infrastructure" width="470" />
+  <img src="./assets/tech-data.svg?v=6" alt="Data &amp; Infrastructure" width="470" />
 </div>
 
 ---

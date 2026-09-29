@@ -113,9 +113,10 @@ def build(fname, color):
 
 
 def main():
-    for color, fname in (("#58A6FF", "typing-dark.gif"), ("#0969DA", "typing-light.gif")):
-        p = build(fname, color)
-        print("wrote %-22s %8.1f KB" % (fname, os.path.getsize(p) / 1024))
+    # 只做深色版。用户反馈浅色版"违反常识、效果很差"，
+    # 且浅色页面顶部出现浅色 banner 本身就不协调 —— hero 恒定深色。
+    p = build("typing-dark.gif", "#58A6FF")
+    print("wrote %-22s %8.1f KB" % ("typing-dark.gif", os.path.getsize(p) / 1024))
 
 
 if __name__ == "__main__":
