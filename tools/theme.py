@@ -124,6 +124,23 @@ THEMES = {
 # 当前生效主题。改这一个值 = 换掉整套配色。
 ACTIVE = "warm"
 
+# 全部徽章色（18 个 = 6 主题 × badge/badge_cta/badge_data）必须两两不同。
+# 为什么要较真：set_theme.py 换色是"把别的主题色批量替换成目标色"。
+# 一旦有颜色撞车（比如 A 主题的 badge 色 == B 主题的 badge_cta 色），
+# 替换就会把 CTA 按钮一起改掉，而页面照样正常显示——只能靠这个断言兜住。
+_BADGE_KEYS = ("badge", "badge_cta", "badge_data")
+_seen = {}
+for _t, _th in THEMES.items():
+    for _k in _BADGE_KEYS:
+        _c = _th[_k].lstrip("#").upper()
+        if _c in _seen:
+            raise ValueError(
+                "徽章色撞车：%s.%s 和 %s.%s 都是 %s，换主题时会互相误伤"
+                % (_seen[_c][0], _seen[_c][1], _t, _k, _c)
+            )
+        _seen[_c] = (_t, _k)
+del _BADGE_KEYS, _seen, _t, _th, _k, _c
+
 
 def get(name=None):
     name = name or ACTIVE

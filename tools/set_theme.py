@@ -56,6 +56,26 @@ def next_version(txt, asset):
     return int(m.group(1)) + 1
 
 
+def leftover_colors(txt, name):
+    """换完色之后扫一遍 README，看还有没有别的主题色残留。
+
+    这是给"静默失败"兜底的：替换逻辑只要有一个分隔符没覆盖对，
+    页面不会报错、图也照常显示，只有颜色悄悄没换。这里把它变成硬失败。
+    """
+    th = T.get(name)
+    mine = {th[k].lstrip("#").upper() for k in ("badge", "badge_cta", "badge_data")}
+    bad = []
+    for key in ("badge", "badge_cta", "badge_data"):
+        for other_name, other in T.THEMES.items():
+            c = other[key].lstrip("#").upper()
+            if c in mine or c not in txt:
+                continue
+            n = len(re.findall(r"(-|color=)" + c + r"(?=[?&])", txt))
+            if n:
+                bad.append("  %s 的 %s 色 %s 仍残留 %d 处" % (other_name, key, c, n))
+    return bad
+
+
 def apply_theme(name):
     th = T.get(name)
     src = os.path.join(ROOT, "assets", "themes", name)
@@ -71,22 +91,36 @@ def apply_theme(name):
     txt = open(README, encoding="utf-8").read()
 
     # 徽章配色：把已知所有主题的徽章色统一映射到目标主题
+    #
+    # shields.io 的颜色参数有三种落点，全都要覆盖，漏一个就是"图换了徽章没换"：
+    #   路径段式   /badge/Python-A8485C?style=for-the-badge   颜色后面跟的是 ?
+    #   查询参数式 ?label=Stars&color=6B3A3F&style=...        颜色前面有 color=，后面跟 &
+    #   旧写法     ...&color=6B3A3F&label=...                颜色后面跟 &
+    #
+    # 坑：路径段式里颜色后面那个分隔符是 ?(0x3F) 不是 &(0x26)。
+    # shields.io 两者都认（都是查询串分隔符），所以线上徽章显示正常，
+    # 肉眼完全看不出问题，只有按 & 匹配替换的脚本会静默失效。
+    # 判据：改完必须能打印出替换处数，全 0 就是没换成功，别看"没报错"就当成功。
     for key in ("badge", "badge_cta", "badge_data"):
         tgt = th[key].lstrip("#").upper()
         for other in T.THEMES.values():
             src_c = other[key].lstrip("#").upper()
             if src_c == tgt:
                 continue
-            txt = txt.replace("-" + src_c + "&style=for-the-badge", "-" + tgt + "&style=for-the-badge")
-            txt = txt.replace("color=" + src_c + "&style=for-the-badge", "color=" + tgt + "&style=for-the-badge")
-            txt = txt.replace("color=" + src_c + "&label=", "color=" + tgt + "&label=")
-            txt = re.sub(r"(-)" + src_c + r"(&logo=)", r"\g<1>" + tgt + r"\g<2>", txt)
+            # 要求颜色前面是 - 或 color=，后面紧跟 ? 或 &，避免误伤无关文本
+            txt, n = re.subn(r"(-|color=)" + src_c + r"(?=[?&])", r"\g<1>" + tgt, txt)
+            if n:
+                print("    %-7s -> %-7s  %d 处" % (src_c, tgt, n))
 
     # bump 本地图的缓存版本
     for a in BUMP_TARGETS:
         v = next_version(txt, a)
         if v:
             txt = re.sub(re.escape(a) + r"\?v=\d+", "%s?v=%d" % (a, v), txt)
+
+    bad = leftover_colors(txt, name)
+    if bad:
+        raise RuntimeError("换色不完整，README 未写入：\n" + "\n".join(bad))
 
     open(README, "w", encoding="utf-8").write(txt)
     set_active(name)
