@@ -24,12 +24,13 @@ D:\Anaconda3\python.exe tools\set_theme.py sakura    # 切到樱粉
 D:\Anaconda3\python.exe tools\set_theme.py all       # 重新生成全部六套
 ```
 
-切主题会自动做四件事，**不需要手工改任何文件**：
+切主题会自动做五件事，**不需要手工改任何文件**：
 
 1. 改 `tools/theme.py` 里的 `ACTIVE`
-2. 把该主题的 `banner.gif` / `typing.gif` / `divider.svg` 复制到 `assets/` 根目录
+2. 把该主题的 `banner.gif` / `typing.gif` / `divider.svg` / 7 张 `h-*.webp` 复制到 `assets/` 根目录
 3. 按主题重写 `README.md` 里所有 shields.io / komarev 徽章的颜色
 4. **bump README 里本地图的 `?v=N`**（camo 按 URL 缓存，不 bump 访客看不到新图）
+5. 重渲「六套配色」区块，保证页面上的「当前」标记和 `ACTIVE` 一致
 
 改完照常 `git add -A; git commit; git push` 即可。
 
@@ -37,6 +38,43 @@ D:\Anaconda3\python.exe tools\set_theme.py all       # 重新生成全部六套
 
 在 `tools/theme.py` 的 `THEMES` 里加一项，照抄现有的改颜色即可，字段含义见文件顶部注释。
 加完跑 `set_theme.py all` 就有了。
+
+---
+
+## 三样"由脚本维护、别手改 README"的资产
+
+| 资产 | 生成器 | 为什么必须脚本化 |
+| :--- | :--- | :--- |
+| 六套配色展示区 | `make_theme_section.py` | 里面有个「当前」高亮，手写迟早和 `ACTIVE` 对不上，而且不报任何错 |
+| 区块标题图 | `make_headers.py` | 7 张图要跟着主题重画 |
+| 主题海报 | `make_theme_posters.py` | 复用 banner 的渲染逻辑，海报和 banner 永远不会长得不一样 |
+
+### 区块标题图为什么是光栅不是 SVG
+
+banner / 分隔线是 SVG，中文用 fontTools 转矢量路径。但 **emoji 转不了路径**：
+Segoe UI Emoji 是 COLR/CPAL 彩色字体，`glyf` 表基本是空的，转出来是空白方块。
+PIL 12 的 `embedded_color=True` 能直接画彩色 emoji（实测 538 色 vs 单色 254 色），
+所以标题图走光栅：2 倍渲染后存 WebP，约 11KB/张。
+
+**存 WebP 必须保留 RGBA。** 曾手滑写了 `img.convert("RGB").save(...)`，
+alpha 被丢掉、透明画布变纯黑，GitHub 浅色模式下一排黑条——本地预览还"挺正常"。
+（另外：`make_headers.py` 只写 `assets/themes/<主题>/`，根目录那份要靠 `set_theme.py` 复制，
+别拿根目录的文件当验证对象，会验到旧文件。）
+
+### 标题胶囊自带深色底
+
+GitHub README 可以切浅色模式。深色 hero 是图片所以无所谓，
+但标题如果做成"亮色渐变字 + 透明底"，访客切浅色主题就完全看不见。
+所以每个标题做成一枚深色胶囊，两种模式下都读得出来。
+对比图见 `preview/headers-lightdark.png`（上半浅色、下半深色）。
+
+### 主题区块里的 `?v=` 不能写死
+
+`make_theme_section.py` 每次切主题都会整体重写那一块。如果版本号写死在里面，
+`set_theme.py` 刚 bump 好的号会被原样冲回去，线上就变成"图换了但 URL 没变"=
+camo 永远给旧图。所以 `_ver()` 从 README 里读当前版本再复用。
+校验方法：扫一遍 README，同一资产出现的 `?v=` 必须只有一个值。
+
 
 ---
 
@@ -113,6 +151,9 @@ Chrome 把 SVG 当 `<img>` 渲染时不跑 SMIL。实测三种方案（`<textPat
 ## 本地校验页（已 gitignore）
 
 - `preview/theme-sheet.png` —— 六套主题对比
+- `preview/headers-sheet.png` —— 七张区块标题图
+- `preview/headers-lightdark.png` —— 标题图在浅色 / 深色模式下的可读性对比
+- `preview/theme-posters.png` —— 六套主题海报
 - `preview/style-sheet.png` —— A/B/C 三种风格方向
 - `preview/wave-compare2.png` —— 波浪参数四档
 - `preview/badge-palette.html` —— 徽章配色三方案
