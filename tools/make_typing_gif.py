@@ -12,7 +12,7 @@
   GIF 在 <img> 里一定动，所以打字机改用 GIF 实现。
 """
 import os
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFont, ImageColor
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "assets")
@@ -42,6 +42,7 @@ def text_w(draw, s, f):
 
 def build(fname, color):
     f = font(FS)
+    rgb = ImageColor.getrgb(color) + (255,)   # "#58A6FF" -> (r,g,b,255)
     probe = Image.new("RGB", (10, 10))
     pd = ImageDraw.Draw(probe)
     widths = [text_w(pd, l, f) for l in LINES]
@@ -76,14 +77,14 @@ def build(fname, color):
         d = ImageDraw.Draw(img)
         x = (W - text_w(d, shown, f)) / 2
         y = (H - FS * 1.35) / 2
-        d.text((x, y), shown, font=f, fill=color + (255,))
+        d.text((x, y), shown, font=f, fill=rgb)
 
         # 光标
         if shown:
             cw = text_w(d, shown, f)
             cx = (W - full) / 2 + cw + 3
             cy = (H - FS * 1.35) / 2 + 2
-            d.rectangle([cx, cy, cx + 5, cy + FS + 2], fill=color + (255,))
+            d.rectangle([cx, cy, cx + 5, cy + FS + 2], fill=rgb)
 
         # RGBA -> P，并把最后一个调色板索引留给"透明"，
         # 这样 GIF 放在深色或浅色背景上都不会出现黑框。
@@ -116,4 +117,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
