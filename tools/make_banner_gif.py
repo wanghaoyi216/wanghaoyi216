@@ -35,9 +35,11 @@ SERIF_B = os.path.join(FDIR, "BOD_B.TTF")
 SCRIPT = os.path.join(FDIR, "segoesc.ttf")
 CJK_B = os.path.join(FDIR, "msyhbd.ttc")
 
-W, H = 1000, 270
+W, H = 1000, 340
 FRAMES = 18
 MS_FRAME = 105
+
+ART = os.path.join(ROOT, "assets", "art", "cartoon.jpg")
 
 FS_A, FS_B = 96, 56           # 首名 / 姓氏字号
 FS_CHIP, FS_SUB = 15, 15
@@ -47,25 +49,27 @@ CHIP_TEXT = ["中国地质大学（武汉）", "地理信息工程 · 硕士在�
 
 
 def _base(theme_name):
-    """静态底：白底 + 三团很淡的彩晕。每帧共用，只算一次。"""
+    """静态底：卡通插画 + 主题色调。每帧共用，只算一次。
+
+    插画是自带版权的生成素材（见 tools/make_art.py），不含任何机构标识。
+    找不到时退回程序化的淡彩光晕，页面不至于开天窗。
+    """
     th = T.get(theme_name)
-    img = Image.new("RGB", (W, H), th["bg"][0])
-    d = ImageDraw.Draw(img, "RGBA")
-    # 位置刻意不对称，三个一样大的圆会很呆板
-    for col, (cx, cy, r) in zip(th["wash"], ((190, 30, 330), (840, 250, 350), (540, 150, 300))):
-        d.ellipse([cx - r, cy - int(r * 0.66), cx + r, cy + int(r * 0.66)],
-                  fill=T.hx(col) + (215,))
-    img = img.filter(ImageFilter.GaussianBlur(32))
-    # 底部再压一层很淡的底色渐变，避免整片死白
-    grad = np.zeros((H, W, 3), np.uint8)
-    c0, c1 = T.hx(th["bg"][0]), T.hx(th["bg"][1])
-    for y in range(H):
-        k = (y / (H - 1)) ** 1.4
-        grad[y, :, :] = [c0[m] + (c1[m] - c0[m]) * k for m in range(3)]
-    return Image.alpha_composite(
-        img.convert("RGBA"),
-        Image.fromarray(
-            np.dstack([grad, np.full((H, W, 1), 120, np.uint8)]), "RGBA")).convert("RGB")
+    if not os.path.exists(ART):
+        img = Image.new("RGB", (W, H), th["bg"][0])
+        d = ImageDraw.Draw(img, "RGBA")
+        for col, (cx, cy, r) in zip(th["wash"], ((190, 30, 330), (840, 250, 350), (540, 150, 300))):
+            d.ellipse([cx - r, cy - int(r * 0.66), cx + r, cy + int(r * 0.66)],
+                      fill=T.hx(col) + (215,))
+        return img.filter(ImageFilter.GaussianBlur(32))
+
+    art = Image.open(ART).convert("RGB").resize((W, H), Image.LANCZOS)
+    # 每套主题往自己的底色上靠一点：同一张插画，六种感觉。
+    # 15%/6% 时差异太微妙几乎看不出，20%/9% 刚好能分辨又不至于把插画本身的
+    # 彩虹弧和等高线细节吃掉。
+    art = Image.blend(art, Image.new("RGB", (W, H), th["bg"][1]), 0.20)
+    art = Image.blend(art, Image.new("RGB", (W, H), th["wash"][0]), 0.09)
+    return art
 
 
 def _grad_row(lut, xs, period, off):
@@ -108,12 +112,12 @@ def build(theme_name, out_path):
     gap = 10
     x0 = int(W / 2 - (w_a + gap + w_b) / 2)
     name_period = int(w_a + gap + w_b)            # 流动周期 = 名字宽度
-    y_name = 118
+    y_name = 150
 
     cw = [int(probe.textlength(t, font=f_chip)) + 40 for t in CHIP_TEXT]
     total = sum(cw) + 10 * (len(cw) - 1)
     cx = int(W / 2 - total / 2)
-    cy0, chh = 214, 34
+    cy0, chh = 248, 36
 
     tag = "G E O S P A T I A L   ×   A R T I F I C I A L   I N T E L L I G E N C E"
 
@@ -125,6 +129,16 @@ def build(theme_name, out_path):
 
         # --- 名字：彩虹横向流动
         g = _rainbow_img(lut, name_period, off, H, x_from=x0, width=name_period)
+        # 先在字底垫一层柔光。卡通背景里那道彩虹弧是浅黄的，而名字的黄色段
+        # 正好会飘到它上面 —— 不垫的话有几个相位是糊的。发光比加白底框好看得多。
+        glow = Image.new("L", (name_period, H), 0)
+        gd = ImageDraw.Draw(glow)
+        for text, font, x, y in (("Haoyi", fa, x0, y_name),
+                                 ("Wang", fb, int(x0 + w_a + gap), y_name + 6)):
+            gd.text((x - x0, y), text, font=font, fill=190, anchor="lm")
+        glow = glow.filter(ImageFilter.GaussianBlur(11))
+        img.paste(Image.new("RGB", (name_period, H), (255, 255, 255)), (x0, 0), glow)
+
         for text, font, x, y in (("Haoyi", fa, x0, y_name),
                                  ("Wang", fb, int(x0 + w_a + gap), y_name + 6)):
             m = Image.new("L", (name_period, H), 0)
@@ -142,10 +156,10 @@ def build(theme_name, out_path):
         t = np.linspace(-1.0, 1.0, rule_w)
         rule_a[:, :, 3] = ((1.0 - np.abs(t)) * 235).astype(np.uint8)
         img.paste(Image.fromarray(rule_a, "RGBA"),
-                  (W // 2 - rule_w // 2, y_name + 46), Image.fromarray(rule_a[:, :, 3]))
+                  (W // 2 - rule_w // 2, y_name + 52), Image.fromarray(rule_a[:, :, 3]))
 
         # --- 副标题
-        d.text((W / 2, y_name + 66), tag, font=f_sub, fill=th["sub"], anchor="mm")
+        d.text((W / 2, y_name + 74), tag, font=f_sub, fill=th["sub"], anchor="mm")
 
         # --- 四颗胶囊：白底 + 彩虹描边
         bar = _rainbow_img(lut, W, off, H)

@@ -9,10 +9,10 @@
   改任何一张图后，记得把下面 URL 的 ?v=N 加一 —— GitHub 的 camo 按 URL 缓存。
   ══════════════════════════════════════════════════════════════ -->
 
-<img alt="Haoyi Wang — Geospatial x AI" src="./assets/banner.gif?v=2" width="100%">
+<img alt="Haoyi Wang — Geospatial x AI" src="./assets/banner.gif?v=4" width="100%">
 
 <p align="center">
-  <img alt="typing" src="./assets/typing.gif?v=2" width="100%">
+  <img alt="typing" src="./assets/typing.gif?v=4" width="100%">
 </p>
 
 ## 🔭 现在
