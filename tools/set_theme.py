@@ -26,7 +26,7 @@ README = os.path.join(ROOT, "README.md")
 
 # 主题目录里的文件名 -> README 实际引用的文件名（现在同名，映射是恒等的）
 LOCAL_ASSETS = {
-    "banner.svg": "banner.svg",
+    "banner.gif": "banner.gif",
     "typing.gif": "typing.gif",
 }
 BUMP_TARGETS = list(LOCAL_ASSETS.values())
@@ -67,18 +67,26 @@ def next_version(txt, asset):
     return int(m.group(1)) + 1 if m else None
 
 
+def _tint(hexstr, amount):
+    """把一个颜色往白色混，返回不带 # 的 hex。用来派生浅色描边。"""
+    r, g, b = T.hx(hexstr)
+    return "%02X%02X%02X" % tuple(int(c + (255 - c) * amount) for c in (r, g, b))
+
+
 def streak_url(th, user="wanghaoyi216"):
     c = lambda v: v.lstrip("#").upper()
-    # 背景取 bg[1]（浅粉）而不是 bg[0]（纯白）��纯白卡片放在 GitHub 白色页面上等于隐形。
-    # 浅色主题下这张卡要能看出是一张"卡"，所以底比页面略深一点。
+    # 背景取 bg[1]（浅色调）而不是 bg[0]（纯白）——纯白卡片放在白色页面上等于隐形。
+    # 描边由 accent 往白里混出来，这样每套主题的卡片边框跟着主题走，
+    # 不用再往 theme.py 里加一个专门的键。
+    #
     # currStreakLabel 不能少：中间那列的 "Current Streak" 文字是对方
-    # 硬编码的 #FB8C00（橙金），不传这个参数就改不掉 —— 而橙色正是要避开的色系。
+    # 硬编码的 #FB8C00（橙金），不传这个参数就改不掉。
     return ("https://streak-stats.demolab.com?user=%s&hide_border=false"
             "&background=%s&border=%s&stroke=%s&ring=%s&fire=%s"
             "&sideNums=%s&sideLabels=%s&title=%s&currStreakLabel=%s"
-            % (user, c(th["bg"][1]), c(th["contour"]), c(th["contour"]), c(th["accent"]),
-               c(th["chip_text"]), c(th["typing"]), c(th["badge_cta"]), c(th["typing"]),
-               c(th["chip_text"])))
+            % (user, c(th["bg"][1]), _tint(th["accent"], 0.62), _tint(th["accent"], 0.40),
+               c(th["accent"]), c(T.RAINBOW[0]), c(th["typing"]), c(th["sub"]),
+               c(th["typing"]), c(th["typing"])))
 
 
 def leftover_colors(txt, name):
@@ -154,10 +162,10 @@ def main():
     arg = sys.argv[1]
 
     if arg == "all":
-        import make_banner, make_typing_gif
+        import make_banner_gif, make_typing_gif
         for k in T.THEMES:
             base = os.path.join(ROOT, "assets", "themes", k)
-            make_banner.build(k, os.path.join(base, "banner.svg"))
+            make_banner_gif.build(k, os.path.join(base, "banner.gif"))
             make_typing_gif.build(k, os.path.join(base, "typing.gif"))
             print("  已生成主题：%s (%s)" % (k, T.THEMES[k]["label"]))
         print("\n全部主题已生成到 assets/themes/<主题名>/")

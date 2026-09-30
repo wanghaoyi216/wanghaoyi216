@@ -1,17 +1,18 @@
 <!-- ══════════════════════════════════════════════════════════════
   个人主页 README
 
-  视觉基调：白为主、粉做点缀（约 75% 白 / 25% 粉），深色只出现在文字里。
+  视觉基调：白底 + 淡彩光晕，彩虹只出现在两个会动的地方 ——
+  banner 的名字填充，和底部一条细线。
   全站配色唯一来源是 tools/theme.py；所有图片由 tools/ 下的脚本生成，
   不依赖任何第三方图片服务（唯一例外是 streak 贡献卡，它保留实时数据）。
 
   改任何一张图后，记得把下面 URL 的 ?v=N 加一 —— GitHub 的 camo 按 URL 缓存。
   ══════════════════════════════════════════════════════════════ -->
 
-<img alt="Haoyi Wang — Geospatial x AI" src="./assets/banner.svg?v=8" width="100%">
+<img alt="Haoyi Wang — Geospatial x AI" src="./assets/banner.gif?v=2" width="100%">
 
 <p align="center">
-  <img alt="typing" src="./assets/typing.gif?v=8" width="100%">
+  <img alt="typing" src="./assets/typing.gif?v=2" width="100%">
 </p>
 
 ## 🔭 现在
@@ -25,26 +26,28 @@
 </table>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Geospatial_AI-F8D7E1?style=for-the-badge&logo=googleearth" alt="Geospatial AI" />
-  <img src="https://img.shields.io/badge/Python-F8D7E1?style=for-the-badge&logo=python" alt="Python" />
-  <img src="https://img.shields.io/badge/Java-F8D7E1?style=for-the-badge&logo=openjdk" alt="Java" />
-  <img src="https://img.shields.io/badge/Vue-F8D7E1?style=for-the-badge&logo=vuedotjs" alt="Vue" />
-  <img src="https://img.shields.io/badge/TypeScript-F8D7E1?style=for-the-badge&logo=typescript" alt="TypeScript" />
-  <img src="https://img.shields.io/badge/Spring_Cloud-F8D7E1?style=for-the-badge&logo=spring" alt="Spring Cloud" />
-  <img src="https://img.shields.io/badge/Docker-F8D7E1?style=for-the-badge&logo=docker" alt="Docker" />
+  <img src="https://img.shields.io/badge/Geospatial_AI-E8E9F7?style=for-the-badge&logo=googleearth" alt="Geospatial AI" />
+  <img src="https://img.shields.io/badge/Python-E8E9F7?style=for-the-badge&logo=python" alt="Python" />
+  <img src="https://img.shields.io/badge/Java-E8E9F7?style=for-the-badge&logo=openjdk" alt="Java" />
+  <img src="https://img.shields.io/badge/Vue-E8E9F7?style=for-the-badge&logo=vuedotjs" alt="Vue" />
+  <img src="https://img.shields.io/badge/TypeScript-E8E9F7?style=for-the-badge&logo=typescript" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Spring_Cloud-E8E9F7?style=for-the-badge&logo=spring" alt="Spring Cloud" />
+  <img src="https://img.shields.io/badge/Docker-E8E9F7?style=for-the-badge&logo=docker" alt="Docker" />
 </p>
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=wanghaoyi216&color=F0C3D1&labelColor=F0C3D1&label=Profile%20Views&style=for-the-badge" alt="Profile views" />
-  <img src="https://img.shields.io/github/followers/wanghaoyi216?label=Followers&color=F0C3D1&labelColor=F0C3D1&style=for-the-badge" alt="Followers" />
-  <img src="https://img.shields.io/github/stars/wanghaoyi216?label=Stars&color=F0C3D1&labelColor=F0C3D1&style=for-the-badge" alt="Stars" />
-  <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Fusers%2Fwanghaoyi216&query=%24.public_repos&label=Repos&color=F0C3D1&labelColor=F0C3D1&style=for-the-badge" alt="Repos" />
-  <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Fusers%2Fwanghaoyi216&query=%24.following&label=Following&color=F0C3D1&labelColor=F0C3D1&style=for-the-badge" alt="Following" />
+  <img src="https://komarev.com/ghpvc/?username=wanghaoyi216&color=DFE3F4&labelColor=DFE3F4&label=Profile%20Views&style=for-the-badge" alt="Profile views" />
+  <img src="https://img.shields.io/github/followers/wanghaoyi216?label=Followers&color=DFE3F4&labelColor=DFE3F4&style=for-the-badge" alt="Followers" />
+  <img src="https://img.shields.io/github/stars/wanghaoyi216?label=Stars&color=DFE3F4&labelColor=DFE3F4&style=for-the-badge" alt="Stars" />
+  <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Fusers%2Fwanghaoyi216&query=%24.public_repos&label=Repos&color=DFE3F4&labelColor=DFE3F4&style=for-the-badge" alt="Repos" />
+  <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Fusers%2Fwanghaoyi216&query=%24.following&label=Following&color=DFE3F4&labelColor=DFE3F4&style=for-the-badge" alt="Following" />
 </p>
 
 ## 🧭 关于我
 
-中国地质大学（武汉）**地理科学与信息工程**硕士在读。我的主线很具体：**用 AI 和工程能力，去解决那些「没人愿意写、但确实很烦」的重复劳动**。
+中国地质大学（武汉）**地理科学与信息工程**硕士在读。
+
+> 我的主线很具体：**用 AI 和工程能力，去解决那些「没人愿意写、但确实很烦」的重复劳动。**
 
 导师明天上午就要的汇报稿、课程平台上重复的排版与整理、读研两年攒下却散落在各个文件夹里的笔记——这些事本身都不难，但特别消耗时间，而且每次都要从头再来一遍。我想让它们变成**跑一次、以后就不用再管**的东西。
 
@@ -81,7 +84,7 @@
 
 <p align="center">
   <a href="https://github.com/wanghaoyi216?tab=repositories">
-    <img src="https://img.shields.io/badge/查看全部仓库-C9456F?style=for-the-badge&logo=github" alt="all repos" />
+    <img src="https://img.shields.io/badge/查看全部仓库-5B5BD6?style=for-the-badge&logo=github" alt="all repos" />
   </a>
 </p>
 
@@ -101,20 +104,20 @@
 ## 📊 贡献轨迹
 
 <p align="center">
-  <img src="https://streak-stats.demolab.com?user=wanghaoyi216&hide_border=false&background=FDEBF2&border=E8A8BE&stroke=E8A8BE&ring=E88AA8&fire=8C2F52&sideNums=8C2F52&sideLabels=C9456F&title=8C2F52&currStreakLabel=8C2F52" alt="Contribution streak" />
+  <img src="https://streak-stats.demolab.com?user=wanghaoyi216&hide_border=false&background=F7F4FB&border=C0CCFB&stroke=9CAFF9&ring=5B7BF5&fire=FF5C7A&sideNums=3D3D48&sideLabels=4A4A57&title=3D3D48&currStreakLabel=3D3D48" alt="Contribution streak" />
 </p>
 
 ## 📫 找到我
 
 <p align="center">
   <a href="mailto:haoyiwang156@gmail.com">
-    <img src="https://img.shields.io/badge/Email-F8D7E1?style=for-the-badge&logo=gmail" alt="Email" />
+    <img src="https://img.shields.io/badge/Email-E8E9F7?style=for-the-badge&logo=gmail" alt="Email" />
   </a>
   <a href="https://github.com/wanghaoyi216" target="_blank" rel="noopener">
-    <img src="https://img.shields.io/badge/GitHub-F8D7E1?style=for-the-badge&logo=github" alt="GitHub" />
+    <img src="https://img.shields.io/badge/GitHub-E8E9F7?style=for-the-badge&logo=github" alt="GitHub" />
   </a>
   <a href="https://github.com/wanghaoyi216?tab=repositories" target="_blank" rel="noopener">
-    <img src="https://img.shields.io/badge/全部仓库-C9456F?style=for-the-badge&logo=github" alt="Repos" />
+    <img src="https://img.shields.io/badge/全部仓库-5B5BD6?style=for-the-badge&logo=github" alt="Repos" />
   </a>
 </p>
 

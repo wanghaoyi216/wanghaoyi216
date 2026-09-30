@@ -40,7 +40,6 @@ MSGS = [
     "把散落两年的笔记重新织成能检索的星图",
 ]
 
-
 def _fit(draw, text, fs, font_paths):
     """中文走行楷、英文走 Comic Sans，逐字符挑字体。"""
     out = []
@@ -54,7 +53,6 @@ def build(theme_name, out_path):
     th = T.get(theme_name)
     bg = T.hx(th["bg"][1])
     fg = T.hx(th["typing"])
-    caret = T.hx(th["accent"])
 
     f_cjk = ImageFont.truetype(CJK, FS)
     f_en = ImageFont.truetype(EN, FS)
@@ -68,9 +66,13 @@ def build(theme_name, out_path):
         return w
 
     frames, durs = [], []
-    for msg in MSGS:
+    rainbow = [T.hx(c) for c in T.RAINBOW]
+    for mi, msg in enumerate(MSGS):
         full = w_of(msg) + 26
         x0 = int(W / 2 - full / 2)
+        # 光标按句轮换彩虹色，和 banner 的彩虹呼应，但只有光标着色 ——
+        # 整行字上彩虹会和 banner 抢注意力，而且在 256 色下更容易糊
+        caret = rainbow[mi % len(rainbow)]
         # 打字 -> 停顿 -> 逐字删除 -> 留白
         plan = [("type", n) for n in range(1, len(msg) + 1)]
         plan.append(("hold", len(msg)))
