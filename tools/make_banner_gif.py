@@ -44,8 +44,10 @@ ART = os.path.join(ROOT, "assets", "art", "cartoon.jpg")
 FS_A, FS_B = 96, 56           # 首名 / 姓氏字号
 FS_CHIP, FS_SUB = 15, 15
 
+# 胶囊文案（与主题无关）。只放三颗：第四颗「Wuhan · China」既和 GitHub 侧栏
+# 的地点栏重复，又正好压在右边山丘那只小吉祥物上。少一颗，构图立刻干净。
 CHIP_TEXT = ["中国地质大学（武汉）", "地理信息工程 · 硕士在读",
-             "Python / Java / Vue", "Wuhan · China"]
+             "Python / Java / Vue"]
 
 
 def _base(theme_name):
@@ -114,10 +116,10 @@ def build(theme_name, out_path):
     name_period = int(w_a + gap + w_b)            # 流动周期 = 名字宽度
     y_name = 150
 
-    cw = [int(probe.textlength(t, font=f_chip)) + 40 for t in CHIP_TEXT]
-    total = sum(cw) + 10 * (len(cw) - 1)
+    cw = [int(probe.textlength(t, font=f_chip)) + 36 for t in CHIP_TEXT]
+    total = sum(cw) + 9 * (len(cw) - 1)
     cx = int(W / 2 - total / 2)
-    cy0, chh = 248, 36
+    cy0, chh = 248, 34
 
     tag = "G E O S P A T I A L   ×   A R T I F I C I A L   I N T E L L I G E N C E"
 
@@ -172,7 +174,7 @@ def build(theme_name, out_path):
             img.paste(bar, (0, 0), rm)
             d.text((x + w / 2, cy0 + chh / 2 + 1), t, font=f_chip,
                    fill=th["chip_text"], anchor="mm")
-            x += w + 10
+            x += w + 9
 
         # --- 底部一条流动的彩虹条。4px 就够，再粗会变成"进度条"抢走注意力
         bottom = _rainbow_img(lut, W, off * 2, 4)
